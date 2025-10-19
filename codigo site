@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aulas Particulares - Química, Física, Matemática e Biologia</title>
+    
+    <style>
+        /* Configurações Globais */
+        :root {
+            --primary-color: #005A9C; /* Azul escuro */
+            --secondary-color: #00A1E0; /* Azul claro */
+            --background-color: #f4f7f6;
+            --text-color: #333;
+            --card-bg-color: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Habilita rolagem suave para todo o site */
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Menu de Navegação Centralizado */
+        .main-menu {
+            background-color: #333;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Permite que o menu quebre em telas pequenas */
+            gap: 20px;
+        }
+
+        .main-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .main-menu a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Seções Principais */
+        main {
+            padding: 2rem 0;
+        }
+
+        section {
+            padding: 40px 20px; /* Adicionado padding lateral para telas menores */
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #materias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            text-align: left;
+        }
+
+        .materia-card {
+            background: var(--card-bg-color);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .materia-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Seção de Contato e Botões */
+        #contato h2 {
+            font-size: 2rem;
+        }
+
+        .contact-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+        }
+
+        .btn-whatsapp { background-color: #25D366; }
+        .btn-email { background-color: #EA4335; }
+
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Reforço Escolar de Elite</h1>
+            <p class="subtitle">Aulas particulares de Química, Física, Matemática e Biologia</p>
+        </div>
+    </header>
+
+    <nav class="main-menu">
+        <div class="container">
+            <ul>
+                <li><a href="#quimica">Química</a></li>
+                <li><a href="#fisica">Física</a></li>
+                <li><a href="#matematica">Matemática</a></li>
+                <li><a href="#biologia">Biologia</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="hero">
+            <h2>Desvende seu potencial e conquiste seus objetivos acadêmicos.</h2>
+            <p>Metodologia focada em resolver suas dificuldades e fortalecer sua base de conhecimento para provas, vestibulares e concursos.</p>
+        </section>
+
+        <section id="materias">
+            <article id="quimica" class="materia-card">
+                <h3>Química</h3>
+                <p>Das ligações atômicas à termoquímica. Domine os cálculos estequiométricos e a química orgânica de forma clara e objetiva.</p>
+            </article>
+            <article id="fisica" class="materia-card">
+                <h3>Física</h3>
+                <p>Entenda as leis de Newton, os segredos da eletricidade e as maravilhas da ondulatória. Transforme fórmulas complexas em raciocínio lógico.</p>
+            </article>
+            <article id="matematica" class="materia-card">
+                <h3>Matemática</h3>
+                <p>Desde a álgebra fundamental até o cálculo e a geometria. Desenvolva a confiança para resolver qualquer problema numérico.</p>
+            </article>
+            <article id="biologia" class="materia-card">
+                <h3>Biologia</h3>
+                <p>Explore os fascinantes mundos da citologia, genética e ecologia. Prepare-se para compreender a ciência da vida em todos os detalhes.</p>
+            </article>
+        </section>
+
+        <section id="contato">
+            <h2>Pronto para começar?</h2>
+            <p>Entre em contato para agendar sua primeira aula e tirar suas dúvidas.</p>
+            <div class="contact-buttons">
+                <button id="whatsapp-btn" class="btn btn-whatsapp">Chamar no WhatsApp</button>
+                <button id="email-btn" class="btn btn-email">Enviar um E-mail</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Aulas Particulares. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // --- IMPORTANTE: EDITE AS INFORMAÇÕES ABAIXO ---
+            const seuNumeroWhatsapp = '56912345678'; // Use o formato internacional sem '+' ou espaços. Ex: 569... (Chile)
+            const seuEmail = 'seu.email@exemplo.com';
+            // ------------------------------------------------
+
+            const whatsappBtn = document.getElementById('whatsapp-btn');
+            const emailBtn = document.getElementById('email-btn');
+
+            // Função para o botão do WhatsApp
+            if (whatsappBtn) {
+                whatsappBtn.addEventListener('click', function() {
+                    const mensagemPadrao = encodeURIComponent('Olá! Tenho interesse nas aulas particulares e gostaria de mais informações.');
+                    const whatsappUrl = `https://wa.me/${seuNumeroWhatsapp}?text=${mensagemPadrao}`;
+                    
+                    // Abre o link do WhatsApp em uma nova aba
+                    window.open(whatsappUrl, '_blank');
+                });
+            }
+
+            // Função para o botão de E-mail
+            if (emailBtn) {
+                emailBtn.addEventListener('click', function() {
+                    const assunto = encodeURIComponent('Interesse em Aulas Particulares');
+                    const corpoEmail = encodeURIComponent('Olá,\n\nGostaria de saber mais detalhes sobre as aulas particulares (horários, valores, metodologia, etc.).\n\nObrigado(a).');
+                    const emailUrl = `mailto:${seuEmail}?subject=${assunto}&body=${corpoEmail}`;
+
+                    // Abre o cliente de e-mail padrão do usuário
+                    window.location.href = emailUrl;
+                });
+            }
+
+            // Bônus: Funcionalidade de rolagem suave para o menu
+            document.querySelectorAll('.main-menu a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
