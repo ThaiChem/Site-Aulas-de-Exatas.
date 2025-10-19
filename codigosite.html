@@ -1,265 +1,289 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Aulas Particulares de Química, Física, Matemática e Biologia em Brazil</title>
+    <title>Aulas Particulares de Química, Física, Matemática e Biologia</title>
+    <meta name="description" content="Professora particular para aulas de reforço em Química, Física, Matemática e Biologia. Metodologia focada em resultados para provas e vestibulares.">
     
-    <meta name="description" content="Professor particular para aulas de reforço em Química, Física, Matemática e Biologia. Metodologia focada em resultados para provas e vestibulares. Agende sua aula em Santiago, Chile.">
-    
-    <meta name="keywords" content="aulas particulares, reforço escolar, professor particular, tutor, química, física, matemática, biologia, vestibular, santiago, chile">
-    
-    <meta name="author" content="Química com Thainara">
-    <meta name="robots" content="index, follow"> <link rel="canonical" href="https://seusite.github.io/aulas/">
-    
-    <meta property="og:title" content="Aulas Particulares de Elite - Química, Física, Matemática e Biologia">
-    <meta property="og:description" content="Reforço escolar com foco em resultados para provas e vestibulares. Agende sua aula!">
-    <meta property="og:image" content="https://seusite.github.io/aulas/imagem-marketing.jpg"> <meta property="og:url" content="https://seusite.github.io/aulas/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pt_BR">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Aulas Particulares de Elite - Química, Física, Matemática e Biologia">
-    <meta name="twitter:description" content="Reforço escolar com foco em resultados para provas e vestibulares. Agende sua aula!">
-    <meta name="twitter:image" content="https://seusite.github.io/aulas/imagem-marketing.jpg"> <style>
-        /* O CSS permanece o mesmo do código anterior */
-        :root {
-            --primary-color: #005A9C;
-            --secondary-color: #00A1E0;
-            --background-color: #f4f7f6;
-            --text-color: #333;
-            --card-bg-color: #ffffff;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
+    <style>
+        /* CSS remains the same */
+        :root { --primary-color: #005A9C; --secondary-color: #00A1E0; --background-color: #f4f7f6; --text-color: #333; --card-bg-color: #ffffff; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.6; scroll-behavior: smooth; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        header { background-color: var(--primary-color); color: white; padding: 2rem 0; text-align: center; position: relative; }
+        .language-switcher { position: absolute; top: 10px; right: 20px; display: flex; gap: 5px; }
+        .lang-btn { background: none; border: 1px solid white; color: white; padding: 5px 10px; cursor: pointer; border-radius: 5px; }
+        .lang-btn:hover, .lang-btn.active { background-color: var(--secondary-color); }
         header h1 { margin: 0; font-size: 2.5rem; }
         header .subtitle { font-size: 1.2rem; opacity: 0.9; }
-        .main-menu {
-            background-color: #333;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .main-menu ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .main-menu a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
+        .main-menu { background-color: #333; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        .main-menu ul { margin: 0; padding: 0; list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+        .main-menu a { color: white; text-decoration: none; font-weight: bold; padding: 5px 10px; border-radius: 5px; transition: background-color 0.3s; }
         .main-menu a:hover { background-color: var(--secondary-color); }
         main { padding: 2rem 0; }
-        section {
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-        #materias {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            text-align: left;
-        }
-        .materia-card {
-            background: var(--card-bg-color);
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .materia-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
+        section { padding: 40px 20px; text-align: center; border-bottom: 1px solid #ddd; }
+        #materias { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left; }
+        .materia-card { background: var(--card-bg-color); padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .materia-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
         #contato h2 { font-size: 2rem; }
-        .contact-buttons {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            color: white;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-        }
+        .contact-buttons { margin-top: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .btn { padding: 15px 30px; border: none; border-radius: 50px; color: white; font-size: 1rem; font-weight: bold; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 10px rgba(0,0,0,0.15); }
         .btn-whatsapp { background-color: #25D366; }
         .btn-email { background-color: #EA4335; }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1.5rem 0;
-        }
+        footer { background-color: #333; color: white; text-align: center; padding: 1.5rem 0; }
     </style>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Aulas Particulares de Química, Física, Matemática e Biologia",
-      "description": "Serviço de aulas particulares e reforço escolar focado em resultados para provas e vestibulares.",
-      "provider": {
-        "@type": "Person",
-        "name": "Seu Nome (O Tutor)"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Santiago"
-      },
-      "serviceType": "Reforço Escolar",
-      "audience": {
-        "@type": "Audience",
-        "audienceType": "Estudantes do ensino médio e pré-vestibular"
-      },
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": "+56-9-1234-5678",
-          "contactType": "Agendamento de Aulas",
-          "areaServed": "CL",
-          "availableLanguage": "Portuguese"
-        },
-        {
-          "@type": "ContactPoint",
-          "email": "seu.email@exemplo.com",
-          "contactType": "Agendamento de Aulas"
-        }
-      ]
-    }
-    </script>
-
 </head>
 <body>
 
     <header>
+        <div class="language-switcher">
+            <button id="lang-pt" class="lang-btn">Português</button>
+            <button id="lang-en" class="lang-btn">English</button>
+            <button id="lang-es" class="lang-btn">Español</button>
+        </div>
         <div class="container">
-            <h1>Reforço Escolar de Elite</h1>
-            <p class="subtitle">Aulas particulares de Química, Física, Matemática e Biologia</p>
+            <h1 data-lang-key="mainTitle">Reforço Escolar de Elite</h1>
+            <p class="subtitle" data-lang-key="mainSubtitle">Aulas particulares de Química, Física, Matemática e Biologia</p>
         </div>
     </header>
+
     <nav class="main-menu">
         <div class="container">
             <ul>
-                <li><a href="#quimica">Química</a></li>
-                <li><a href="#fisica">Física</a></li>
-                <li><a href="#matematica">Matemática</a></li>
-                <li><a href="#biologia">Biologia</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#quimica" data-lang-key="navChemistry">Química</a></li>
+                <li><a href="#fisica" data-lang-key="navPhysics">Física</a></li>
+                <li><a href="#matematica" data-lang-key="navMath">Matemática</a></li>
+                <li><a href="#biologia" data-lang-key="navBiology">Biologia</a></li>
+                <li><a href="#contato" data-lang-key="navContact">Contato</a></li>
             </ul>
         </div>
     </nav>
+
     <main class="container">
         <section id="hero">
-            <h2>Desvende seu potencial e conquiste seus objetivos acadêmicos.</h2>
-            <p>Metodologia focada em resolver suas dificuldades e fortalecer sua base de conhecimento para provas, vestibulares e concursos.</p>
+            <h2 data-lang-key="heroTitle">Desvende seu potencial e conquiste seus objetivos acadêmicos.</h2>
+            <p data-lang-key="heroSubtitle">Metodologia focada em resolver suas dificuldades e fortalecer sua base de conhecimento para provas, vestibulares e concursos.</p>
         </section>
+
         <section id="materias">
             <article id="quimica" class="materia-card">
-                <h3>Química</h3>
-                <p>Das ligações atômicas à termoquímica. Domine os cálculos estequiométricos e a química orgânica de forma clara e objetiva.</p>
+                <h3 data-lang-key="chemTitle">Química</h3>
+                <p data-lang-key="chemDesc">Das ligações atômicas à termoquímica. Domine os cálculos estequiométricos e a química orgânica de forma clara e objetiva.</p>
             </article>
             <article id="fisica" class="materia-card">
-                <h3>Física</h3>
-                <p>Entenda as leis de Newton, os segredos da eletricidade e as maravilhas da ondulatória. Transforme fórmulas complexas em raciocínio lógico.</p>
+                <h3 data-lang-key="physTitle">Física</h3>
+                <p data-lang-key="physDesc">Entenda as leis de Newton, os segredos da eletricidade e as maravilhas da ondulatória. Transforme fórmulas complexas em raciocínio lógico.</p>
             </article>
             <article id="matematica" class="materia-card">
-                <h3>Matemática</h3>
-                <p>Desde a álgebra fundamental até o cálculo e a geometria. Desenvolva a confiança para resolver qualquer problema numérico.</p>
+                <h3 data-lang-key="mathTitle">Matemática</h3>
+                <p data-lang-key="mathDesc">Desde a álgebra fundamental até o cálculo e a geometria. Desenvolva a confiança para resolver qualquer problema numérico.</p>
             </article>
             <article id="biologia" class="materia-card">
-                <h3>Biologia</h3>
-                <p>Explore os fascinantes mundos da citologia, genética e ecologia. Prepare-se para compreender a ciência da vida em todos os detalhes.</p>
+                <h3 data-lang-key="bioTitle">Biologia</h3>
+                <p data-lang-key="bioDesc">Explore os fascinantes mundos da citologia, genética e ecologia. Prepare-se para compreender a ciência da vida em todos os detalhes.</p>
             </article>
         </section>
+
         <section id="contato">
-            <h2>Pronto para começar?</h2>
-            <p>Entre em contato para agendar sua primeira aula e tirar suas dúvidas.</p>
+            <h2 data-lang-key="contactTitle">Pronto para começar?</h2>
+            <p data-lang-key="contactSubtitle">Entre em contato para agendar sua primeira aula e tirar suas dúvidas.</p>
             <div class="contact-buttons">
-                <button id="whatsapp-btn" class="btn btn-whatsapp">Chamar no WhatsApp</button>
-                <button id="email-btn" class="btn btn-email">Enviar um E-mail</button>
+                <button id="whatsapp-btn" class="btn btn-whatsapp" data-lang-key="btnWhatsapp">Chamar no WhatsApp</button>
+                <button id="email-btn" class="btn btn-email" data-lang-key="btnEmail">Enviar um E-mail</button>
             </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy;Desenvolvido por Thainara 2025. Todos os direitos reservados.</p>
+        <p data-lang-key="footerText">&copy; 2025 Aulas Particulares. Todos os direitos reservados.</p>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             
-            const seuNumeroWhatsapp = '5571985543247';
-            const seuEmail = 'https://docs.google.com/forms/d/e/1FAIpQLSd3gt5ejgN8JEITofjb9gPpFeQtvydUooHGil5UmJhCnDyU3w/viewform?usp=pp_url';
-            // O restante do JavaScript permanece o mesmo
+            // --- DICIONÁRIO DE TRADUÇÕES ---
+            // Todo o texto do site está aqui. Edite-o se for necessário.
+            const translations = {
+                pt: {
+                    // SEO
+                    pageTitle: "Aulas Particulares de Química, Física, Matemática e Biologia",
+                    metaDescription: "Professora particular para aulas de reforço em Química, Física, Matemática e Biologia. Metodologia focada em resultados para provas e vestibulares.",
+                    // Cabeçalho
+                    mainTitle: "Reforço Escolar de Elite",
+                    mainSubtitle: "Aulas particulares de Química, Física, Matemática e Biologia",
+                    // Navegação
+                    navChemistry: "Química",
+                    navPhysics: "Física",
+                    navMath: "Matemática",
+                    navBiology: "Biologia",
+                    navContact: "Contato",
+                    // Seção Hero
+                    heroTitle: "Desvende seu potencial e conquiste seus objetivos acadêmicos.",
+                    heroSubtitle: "Metodologia focada em resolver suas dificuldades e fortalecer sua base de conhecimento para provas, vestibulares e concursos.",
+                    // Cards de Matérias
+                    chemTitle: "Química",
+                    chemDesc: "Das ligações atômicas à termoquímica. Domine os cálculos estequiométricos e a química orgânica de forma clara e objetiva.",
+                    physTitle: "Física",
+                    physDesc: "Entenda as leis de Newton, os segredos da eletricidade e as maravilhas da ondulatória. Transforme fórmulas complexas em raciocínio lógico.",
+                    mathTitle: "Matemática",
+                    mathDesc: "Desde a álgebra fundamental até o cálculo e a geometria. Desenvolva a confiança para resolver qualquer problema numérico.",
+                    bioTitle: "Biologia",
+                    bioDesc: "Explore os fascinantes mundos da citologia, genética e ecologia. Prepare-se para compreender a ciência da vida em todos os detalhes.",
+                    // Contato
+                    contactTitle: "Pronto para começar?",
+                    contactSubtitle: "Entre em contato para agendar sua primeira aula e tirar suas dúvidas.",
+                    btnWhatsapp: "Chamar no WhatsApp",
+                    btnEmail: "Enviar um E-mail",
+                    // Mensagens de Contato
+                    whatsappMessage: "Olá! Tenho interesse nas aulas particulares e gostaria de mais informações.",
+                    emailSubject: "Interesse em Aulas Particulares",
+                    emailBody: "Olá,\n\nGostaria de saber mais detalhes sobre as aulas particulares (horários, valores, metodologia, etc.).\n\nObrigado(a).",
+                    // Rodapé
+                    footerText: "© 2025 Aulas Particulares. Todos os direitos reservados."
+                },
+                en: {
+                    // SEO
+                    pageTitle: "Private Tutoring for Chemistry, Physics, Mathematics & Biology",
+                    metaDescription: "Private tutor for reinforcement classes in Chemistry, Physics, Mathematics, and Biology. Methodology focused on results for exams and university admission.",
+                    // Header
+                    mainTitle: "Elite Tutoring Services",
+                    mainSubtitle: "Private classes for Chemistry, Physics, Mathematics & Biology",
+                    // Navigation
+                    navChemistry: "Chemistry",
+                    navPhysics: "Physics",
+                    navMath: "Mathematics",
+                    navBiology: "Biology",
+                    navContact: "Contact",
+                    // Hero Section
+                    heroTitle: "Unlock your potential and achieve your academic goals.",
+                    heroSubtitle: "Methodology focused on solving your difficulties and strengthening your knowledge base for exams and university admissions.",
+                    // Subject Cards
+                    chemTitle: "Chemistry",
+                    chemDesc: "From atomic bonds to thermochemistry. Master stoichiometric calculations and organic chemistry in a clear and objective way.",
+                    physTitle: "Physics",
+                    physDesc: "Understand Newton's laws, the secrets of electricity, and the wonders of wave theory. Turn complex formulas into logical reasoning.",
+                    mathTitle: "Mathematics",
+                    mathDesc: "From fundamental algebra to calculus and geometry. Build the confidence to solve any numerical problem.",
+                    bioTitle: "Biology",
+                    bioDesc: "Explore the fascinating worlds of cytology, genetics, and ecology. Prepare to understand the science of life in all its details.",
+                    // Contact
+                    contactTitle: "Ready to get started?",
+                    contactSubtitle: "Contact me to schedule your first class and ask any questions.",
+                    btnWhatsapp: "Contact on WhatsApp",
+                    btnEmail: "Send an E-mail",
+                    // Contact Messages
+                    whatsappMessage: "Hello! I am interested in the private tutoring classes and would like more information.",
+                    emailSubject: "Interest in Private Tutoring",
+                    emailBody: "Hello,\n\nI would like to know more details about the private tutoring classes (schedules, prices, methodology, etc.).\n\nThank you.",
+                    // Footer
+                    footerText: "© 2025 Private Tutoring. All rights reserved."
+                },
+                es: {
+                    // SEO
+                    pageTitle: "Clases Particulares de Química, Física, Matemática y Biología",
+                    metaDescription: "Profesora particular para clases de refuerzo en Química, Física, Matemática y Biología. Metodología enfocada en resultados para exámenes y admisión universitaria.",
+                    // Encabezado
+                    mainTitle: "Clases Particulares de Élite",
+                    mainSubtitle: "Química, Física, Matemática y Biología",
+                    // Navegación
+                    navChemistry: "Química",
+                    navPhysics: "Física",
+                    navMath: "Matemática",
+                    navBiology: "Biología",
+                    navContact: "Contacto",
+                    // Sección Hero
+                    heroTitle: "Desbloquea tu potencial y alcanza tus metas académicas.",
+                    heroSubtitle: "Metodología enfocada en resolver tus dificultades y fortalecer tu base de conocimientos para exámenes y admisión universitaria.",
+                    // Tarjetas de Materias
+                    chemTitle: "Química",
+                    chemDesc: "Desde enlaces atómicos hasta termoquímica. Domina los cálculos estequiométricos y la química orgánica de forma clara y objetiva.",
+                    physTitle: "Física",
+                    physDesc: "Entiende las leyes de Newton, los secretos de la electricidad y las maravillas de la ondulación. Transforma fórmulas complexas en razonamiento lógico.",
+                    mathTitle: "Matemática",
+                    mathDesc: "Desde el álgebra fundamental hasta el cálculo y la geometría. Desarrolla la confianza para resolver cualquier problema numérico.",
+                    bioTitle: "Biología",
+                    bioDesc: "Explora los fascinantes mundos de la citología, genética y ecología. Prepárate para comprender la ciencia de la vida en todos sus detalles.",
+                    // Contacto
+                    contactTitle: "¿Listo para empezar?",
+                    contactSubtitle: "Contáctame para agendar tu primera clase y resolver tus dudas.",
+                    btnWhatsapp: "Contactar por WhatsApp",
+                    btnEmail: "Enviar un E-mail",
+                    // Mensajes de Contacto
+                    whatsappMessage: "¡Hola! Estoy interesado/a en las clases particulares y me gustaría recibir más información.",
+                    emailSubject: "Interés en Clases Particulares",
+                    emailBody: "Hola,\n\nMe gustaría saber más detalles sobre las clases particulares (horarios, precios, metodología, etc.).\n\nGracias.",
+                    // Pie de página
+                    footerText: "© 2025 Clases Particulares. Todos los derechos reservados."
+                }
+            };
+            
+            // --- LÓGICA DE CONTATO E TRADUÇÃO ---
+            const seuNumeroWhatsapp = '5571985543247'; // Número do Brasil (código do país + DDD + número)
+            const seuEmail = 'thainara.almeida.quimica@gmail.com'; 
+
+            const langPtBtn = document.getElementById('lang-pt');
+            const langEnBtn = document.getElementById('lang-en');
+            const langEsBtn = document.getElementById('lang-es');
+            const allLangElements = document.querySelectorAll('[data-lang-key]');
+            
+            let currentLang = 'pt'; // Idioma padrão
+
+            const setLanguage = (lang) => {
+                currentLang = lang;
+                document.documentElement.lang = lang; 
+
+                // Atualiza SEO tags
+                document.title = translations[lang].pageTitle;
+                document.querySelector('meta[name="description"]').setAttribute('content', translations[lang].metaDescription);
+                
+                // Atualiza o texto da página
+                allLangElements.forEach(element => {
+                    const key = element.dataset.langKey;
+                    if (translations[lang][key]) {
+                        element.textContent = translations[lang][key];
+                    }
+                });
+
+                // Atualiza o estado ativo dos botões de idioma
+                langPtBtn.classList.toggle('active', lang === 'pt');
+                langEnBtn.classList.toggle('active', lang === 'en');
+                langEsBtn.classList.toggle('active', lang === 'es');
+            };
+
+            langPtBtn.addEventListener('click', () => setLanguage('pt'));
+            langEnBtn.addEventListener('click', () => setLanguage('en'));
+            langEsBtn.addEventListener('click', () => setLanguage('es'));
+
+            // Lógica dos botões de contato
             const whatsappBtn = document.getElementById('whatsapp-btn');
             const emailBtn = document.getElementById('email-btn');
-            if (whatsappBtn) {
-                whatsappBtn.addEventListener('click', function() {
-                    const mensagemPadrao = encodeURIComponent('Olá! Tenho interesse nas aulas particulares e gostaria de mais informações.');
-                    const whatsappUrl = `https://wa.me/${seuNumeroWhatsapp}?text=${mensagemPadrao}`;
-                    window.open(whatsappUrl, '_blank');
-                });
-            }
-            if (emailBtn) {
-                emailBtn.addEventListener('click', function() {
-                    const assunto = encodeURIComponent('Interesse em Aulas Particulares');
-                    const corpoEmail = encodeURIComponent('Olá,\n\nGostaria de saber mais detalhes sobre as aulas particulares (horários, valores, metodologia, etc.).\n\nObrigado(a).');
-                    const emailUrl = `mailto:${seuEmail}?subject=${assunto}&body=${corpoEmail}`;
-                    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSd3gt5ejgN8JEITofjb9gPpFeQtvydUooHGil5UmJhCnDyU3w/viewform?usp=pp_url';
-                });
-            }
+
+            whatsappBtn.addEventListener('click', function() {
+                const message = encodeURIComponent(translations[currentLang].whatsappMessage);
+                const whatsappUrl = `https://wa.me/${seuNumeroWhatsapp}?text=${message}`;
+                window.open(whatsappUrl, '_blank');
+            });
+
+            emailBtn.addEventListener('click', function() {
+                const subject = encodeURIComponent(translations[currentLang].emailSubject);
+                const body = encodeURIComponent(translations[currentLang].emailBody);
+                const emailUrl = `mailto:${seuEmail}?subject=${subject}&body=${body}`;
+                window.location.href = emailUrl;
+            });
+            
+            // Lógica de scroll suave
             document.querySelectorAll('.main-menu a').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
                 });
             });
+
+            // Estabelece o idioma inicial ao carregar a página
+            setLanguage(currentLang);
         });
     </script>
 </body>
