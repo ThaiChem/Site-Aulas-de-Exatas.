@@ -3,288 +3,441 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Aulas Particulares de Química, Física, Matemática e Biologia</title>
-    <meta name="description" content="Professora particular para aulas de reforço em Química, Física, Matemática e Biologia. Metodologia focada em resultados para provas e vestibulares.">
+    <title>Química com Thainara | Aulas Particulares</title>
+    <meta name="description" content="Aulas de Química, Física e Matemática. Preparação para ENEM e Olimpíadas. Química com Thainara.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* CSS remains the same */
-        :root { --primary-color: #005A9C; --secondary-color: #00A1E0; --background-color: #f4f7f6; --text-color: #333; --card-bg-color: #ffffff; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.6; scroll-behavior: smooth; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        header { background-color: var(--primary-color); color: white; padding: 2rem 0; text-align: center; position: relative; }
-        .language-switcher { position: absolute; top: 10px; right: 20px; display: flex; gap: 5px; }
-        .lang-btn { background: none; border: 1px solid white; color: white; padding: 5px 10px; cursor: pointer; border-radius: 5px; }
-        .lang-btn:hover, .lang-btn.active { background-color: var(--secondary-color); }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header .subtitle { font-size: 1.2rem; opacity: 0.9; }
-        .main-menu { background-color: #333; padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
-        .main-menu ul { margin: 0; padding: 0; list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
-        .main-menu a { color: white; text-decoration: none; font-weight: bold; padding: 5px 10px; border-radius: 5px; transition: background-color 0.3s; }
-        .main-menu a:hover { background-color: var(--secondary-color); }
-        main { padding: 2rem 0; }
-        section { padding: 40px 20px; text-align: center; border-bottom: 1px solid #ddd; }
-        #materias { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left; }
-        .materia-card { background: var(--card-bg-color); padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
-        .materia-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
-        #contato h2 { font-size: 2rem; }
-        .contact-buttons { margin-top: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .btn { padding: 15px 30px; border: none; border-radius: 50px; color: white; font-size: 1rem; font-weight: bold; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 10px rgba(0,0,0,0.15); }
-        .btn-whatsapp { background-color: #25D366; }
-        .btn-email { background-color: #EA4335; }
-        footer { background-color: #333; color: white; text-align: center; padding: 1.5rem 0; }
+        /* --- ESTILOS GERAIS --- */
+        :root {
+            --primary: #0a2463; --secondary: #3e92cc; --accent: #d8315b;
+            --light: #f8f9fa; --dark: #1e1e24; --success: #28a745; --warning: #ffc107;
+            --whatsapp: #25D366; 
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --transition: all 0.3s ease;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; cursor: pointer; }
+        ul { list-style: none; }
+
+        /* HEADER */
+        header {
+            background-color: var(--primary); color: white; padding: 1rem 5%;
+            position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--secondary); }
+        nav ul { display: flex; gap: 20px; }
+        nav a:hover, nav a.active { color: var(--secondary); opacity: 1; }
+        
+        .lang-selector select { background: transparent; color: white; border: 1px solid var(--secondary); padding: 5px; border-radius: 4px; }
+        .lang-selector select option { color: var(--dark); }
+
+        /* HERO & LAYOUT */
+        main { min-height: 80vh; padding: 2rem 5%; }
+        section { display: none; animation: fadeIn 0.5s; }
+        section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); color: white; padding: 4rem 2rem; border-radius: 15px; text-align: center; margin-bottom: 3rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        
+        /* BOTÕES */
+        .btn { display: inline-block; background: var(--accent); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: var(--transition); border: none; font-size: 1rem; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(216, 49, 91, 0.4); }
+        .btn-whatsapp { background-color: var(--whatsapp); color: white; }
+        .btn-whatsapp:hover { background-color: #20b858; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); }
+
+        /* CARDS & GRID */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: var(--transition); border-top: 4px solid var(--secondary); }
+        .card:hover { transform: translateY(-5px); }
+        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
+
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; }
+
+        /* QUIZ */
+        .quiz-container { background: white; padding: 2rem; border-radius: 10px; margin-top: 2rem; border: 2px solid var(--secondary); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; color: var(--primary); font-weight: bold; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .option-btn { display: block; width: 100%; text-align: left; background: #f8f9fa; padding: 15px; margin: 10px 0; border: 1px solid #dee2e6; cursor: pointer; border-radius: 8px; transition: var(--transition); font-size: 1rem; position: relative; }
+        .option-btn:hover:not([disabled]) { background: #e2e6ea; transform: translateX(5px); }
+        .option-btn.correct { background: #d4edda; border-color: #28a745; color: #155724; }
+        .option-btn.wrong { background: #f8d7da; border-color: #dc3545; color: #721c24; }
+        .quiz-controls { margin-top: 25px; text-align: right; }
+        .btn-next { background-color: var(--primary); }
+        .btn-restart { background-color: var(--secondary); margin-top: 15px; }
+        .quiz-results-box { text-align: center; padding: 3rem 1rem; }
+        .final-score { font-size: 3.5rem; color: var(--accent); font-weight: 800; display: block; margin: 1rem 0; }
+        
+        /* NOVO: Botão Reiniciar no Topo do Quiz */
+        .btn-mini-restart {
+            background: none; border: none; color: var(--accent); 
+            cursor: pointer; font-size: 1.2rem; transition: transform 0.3s;
+            margin-left: 15px;
+        }
+        .btn-mini-restart:hover { transform: rotate(180deg); color: var(--primary); }
+
+        /* BOTÃO FLUTUANTE WPP */
+        .float-wpp {
+            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
+            background-color: var(--whatsapp); color: #FFF; border-radius: 50px;
+            text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999;
+            z-index: 100; display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease; animation: pulse 2s infinite;
+        }
+        .float-wpp:hover { transform: scale(1.1); background-color: #20b858; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+
+        /* TICKETS & FOOTER */
+        .ticket-item { background: white; padding: 1rem; border-left: 4px solid var(--warning); margin-bottom: 10px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .status-badge { background: #e9ecef; padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; float: right; }
+        
+        footer { background: var(--dark); color: white; padding: 3rem 5%; text-align: center; margin-top: 4rem; }
+        footer a { color: var(--secondary); text-decoration: underline; }
+        
+        @media (max-width: 768px) { 
+            header { flex-direction: column; gap: 15px; } 
+            nav ul { flex-wrap: wrap; justify-content: center; } 
+            .float-wpp { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
+        }
     </style>
 </head>
 <body>
 
+    <a href="https://wa.me/5571985543247?text=Olá! Vim pelo site e gostaria de saber mais sobre as aulas." class="float-wpp" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <header>
-        <div class="language-switcher">
-            <button id="lang-pt" class="lang-btn">Português</button>
-            <button id="lang-en" class="lang-btn">English</button>
-            <button id="lang-es" class="lang-btn">Español</button>
-        </div>
-        <div class="container">
-            <h1 data-lang-key="mainTitle">Reforço Escolar de Elite</h1>
-            <p class="subtitle" data-lang-key="mainSubtitle">Aulas particulares de Química, Física, Matemática e Biologia</p>
+        <div class="logo"><i class="fa-solid fa-atom"></i><div>QUÍMICA COM THAINARA</div></div>
+        <nav>
+            <ul>
+                <li><a onclick="router('home')" data-i18n="nav_home">Início</a></li>
+                <li><a onclick="router('quiz')" data-i18n="nav_quiz">Quiz</a></li>
+                <li><a onclick="router('olympiads')" data-i18n="nav_olympiads">Olimpíadas</a></li>
+                <li><a onclick="router('tutoring')" data-i18n="nav_tutoring">Aulas</a></li>
+                <li><a onclick="router('support')" data-i18n="nav_support">Suporte</a></li>
+            </ul>
+        </nav>
+        <div class="lang-selector">
+            <select id="langSelect" onchange="changeLanguage(this.value)">
+                <option value="pt">PT</option>
+                <option value="en">EN</option>
+                <option value="es">ES</option>
+            </select>
         </div>
     </header>
 
-    <nav class="main-menu">
-        <div class="container">
-            <ul>
-                <li><a href="#quimica" data-lang-key="navChemistry">Química</a></li>
-                <li><a href="#fisica" data-lang-key="navPhysics">Física</a></li>
-                <li><a href="#matematica" data-lang-key="navMath">Matemática</a></li>
-                <li><a href="#biologia" data-lang-key="navBiology">Biologia</a></li>
-                <li><a href="#contato" data-lang-key="navContact">Contato</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main class="container">
-        <section id="hero">
-            <h2 data-lang-key="heroTitle">Desvende seu potencial e conquiste seus objetivos acadêmicos.</h2>
-            <p data-lang-key="heroSubtitle">Metodologia focada em resolver suas dificuldades e fortalecer sua base de conhecimento para provas, vestibulares e concursos.</p>
+    <main>
+        <section id="home" class="active">
+            <div class="hero">
+                <h1 data-i18n="hero_title">Excelência em Exatas</h1>
+                <p data-i18n="hero_subtitle">Preparação para ENEM, OBQ, IChO e Ensino Superior.</p>
+                <button class="btn" onclick="router('tutoring')" data-i18n="btn_start">Agendar Aula</button>
+            </div>
+            <div class="grid-container">
+                <div class="card"><i class="fa-solid fa-flask"></i><h3 data-i18n="feat_chem">Química Avançada</h3></div>
+                <div class="card"><i class="fa-solid fa-calculator"></i><h3 data-i18n="feat_math">Matemática Pura</h3></div>
+                <div class="card"><i class="fa-solid fa-dna"></i><h3 data-i18n="feat_bio">Biologia Moderna</h3></div>
+                <div class="card"><i class="fa-solid fa-rocket"></i><h3 data-i18n="feat_phys">Física Aplicada</h3></div>
+            </div>
         </section>
 
-        <section id="materias">
-            <article id="quimica" class="materia-card">
-                <h3 data-lang-key="chemTitle">Química</h3>
-                <p data-lang-key="chemDesc">Das ligações atômicas à termoquímica. Domine os cálculos estequiométricos e a química orgânica de forma clara e objetiva.</p>
-            </article>
-            <article id="fisica" class="materia-card">
-                <h3 data-lang-key="physTitle">Física</h3>
-                <p data-lang-key="physDesc">Entenda as leis de Newton, os segredos da eletricidade e as maravilhas da ondulatória. Transforme fórmulas complexas em raciocínio lógico.</p>
-            </article>
-            <article id="matematica" class="materia-card">
-                <h3 data-lang-key="mathTitle">Matemática</h3>
-                <p data-lang-key="mathDesc">Desde a álgebra fundamental até o cálculo e a geometria. Desenvolva a confiança para resolver qualquer problema numérico.</p>
-            </article>
-            <article id="biologia" class="materia-card">
-                <h3 data-lang-key="bioTitle">Biologia</h3>
-                <p data-lang-key="bioDesc">Explore os fascinantes mundos da citologia, genética e ecologia. Prepare-se para compreender a ciência da vida em todos os detalhes.</p>
-            </article>
+        <section id="quiz">
+            <h2 data-i18n="subjects_title">Simulados Interativos</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3><i class="fa-solid fa-flask"></i> Química</h3>
+                    <p data-i18n="q_bank_chem">Banco de Questões: 10 Itens</p>
+                    <button class="btn" style="margin-top:15px; width:100%;" onclick="startQuiz('chem')"><i class="fa-solid fa-play"></i> <span data-i18n="btn_quiz">Iniciar Quiz</span></button>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-bolt"></i> Física</h3>
+                    <p data-i18n="q_bank_phys">Banco de Questões: 10 Itens</p>
+                    <button class="btn" style="margin-top:15px; width:100%; background-color: var(--secondary);" onclick="startQuiz('phys')"><i class="fa-solid fa-play"></i> <span data-i18n="btn_quiz">Iniciar Quiz</span></button>
+                </div>
+            </div>
+            
+            <div id="quiz-area" class="quiz-container" style="display:none;">
+                <div id="question-box">
+                    <div class="quiz-header">
+                        <span id="quiz-subject-title">Quiz</span>
+                        <div>
+                            <span id="quiz-progress">Questão 1</span>
+                            <button class="btn-mini-restart" onclick="restartQuiz()" title="Reiniciar / Restart"><i class="fa-solid fa-rotate-right"></i></button>
+                        </div>
+                    </div>
+                    <h4 id="quiz-question" style="margin: 20px 0; font-size: 1.3rem;">Title</h4>
+                    <div id="quiz-options"></div>
+                    <div id="quiz-feedback" style="margin-top:20px; font-weight:bold; padding: 10px; border-radius: 5px;"></div>
+                    <div class="quiz-controls"><button id="btn-next-q" class="btn btn-next" style="display:none;" onclick="nextQuestion()"><span id="btn-next-text">Próxima</span> <i class="fa-solid fa-arrow-right"></i></button></div>
+                </div>
+                <div id="results-box" class="quiz-results-box" style="display:none;">
+                    <h2><i class="fa-solid fa-trophy" style="color: gold;"></i> <span data-i18n="quiz_end">Simulado Finalizado!</span></h2>
+                    <span id="final-score-display" class="final-score">0 / 0</span>
+                    <button class="btn btn-restart" onclick="restartQuiz()"><i class="fa-solid fa-rotate-right"></i> <span data-i18n="btn_restart">Tentar Novamente</span></button>
+                    <button class="btn" style="background-color: #6c757d; margin-top: 10px;" onclick="router('subjects')"><span data-i18n="btn_back">Voltar</span></button>
+                </div>
+            </div>
         </section>
 
-        <section id="contato">
-            <h2 data-lang-key="contactTitle">Pronto para começar?</h2>
-            <p data-lang-key="contactSubtitle">Entre em contato para agendar sua primeira aula e tirar suas dúvidas.</p>
-            <div class="contact-buttons">
-                <button id="whatsapp-btn" class="btn btn-whatsapp" data-lang-key="btnWhatsapp">Chamar no WhatsApp</button>
-                <button id="email-btn" class="btn btn-email" data-lang-key="btnEmail">Enviar um E-mail</button>
+        <section id="olympiads">
+            <h2 data-i18n="nav_olympiads">Preparação Olímpica</h2>
+            <div class="grid-container">
+                <div class="card" style="border-top-color: gold;"><h3>OBQ (Brasil)</h3><p data-i18n="obq_desc">Preparação intensiva.</p></div>
+                <div class="card" style="border-top-color: gold;"><h3>IChO (Internacional)</h3><p data-i18n="icho_desc">Treinamento global.</p></div>
+            </div>
+        </section>
+
+        <section id="tutoring">
+            <h2 data-i18n="schedule_title">Agende sua Aula</h2>
+            <div class="grid-container" style="grid-template-columns: 1fr 1fr;">
+                <div>
+                    <p data-i18n="schedule_desc">Selecione a disciplina e o horário. Preencha o formulário para falar diretamente conosco.</p>
+                    <div style="margin-top: 2rem; padding: 1rem; background: #e0f2f1; border-radius: 8px; border-left: 4px solid var(--whatsapp);">
+                        <i class="fa-brands fa-whatsapp" style="color: var(--whatsapp); font-size: 1.5rem;"></i>
+                        <strong>WhatsApp:</strong>
+                        <p>Fale diretamente com Thainara Almeida.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <form onsubmit="handleWhatsAppBooking(event)">
+                        <div class="form-group">
+                            <label data-i18n="form_name">Seu Nome</label>
+                            <input type="text" id="bookingName" required placeholder="Ex: Maria Silva">
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="form_subject">Matéria de Interesse</label>
+                            <select id="bookingSubject">
+                                <option value="Química">Química</option>
+                                <option value="Física">Física</option>
+                                <option value="Matemática">Matemática</option>
+                                <option value="Biologia">Biologia</option>
+                                <option value="Olimpíadas">Treino Olimpíadas</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="form_time">Melhor Horário</label>
+                            <select id="bookingTime">
+                                <option value="Manhã">Manhã / Morning</option>
+                                <option value="Tarde">Tarde / Afternoon</option>
+                                <option value="Noite">Noite / Evening</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-whatsapp" style="width:100%">
+                            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_book">Agendar no WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="support">
+            <h2 data-i18n="support_title">Suporte</h2>
+            <div class="grid-container" style="grid-template-columns: 1fr 1fr;">
+                <div class="card">
+                    <h3 data-i18n="open_ticket">Abrir Ticket</h3>
+                    <p style="font-size:0.9rem; margin-bottom:10px;" data-i18n="ticket_sub">Dúvidas complexas ou envio de materiais.</p>
+                    <form onsubmit="createTicket(event)">
+                        <div class="form-group">
+                            <label data-i18n="ticket_msg">Mensagem</label>
+                            <textarea id="ticketMessage" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" data-i18n="btn_send">Enviar por E-mail</button>
+                    </form>
+                </div>
+                <div><h3 data-i18n="my_tickets">Histórico Recente</h3><div id="ticketList" class="ticket-list"></div></div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p data-lang-key="footerText">&copy; 2025 Aulas Particulares. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Química com Thainara Education.</p>
+        <p style="margin-top: 10px;">
+            <i class="fa-solid fa-envelope"></i> 
+            <a href="mailto:thainara.almeida.quimica@gmail.com">thainara.almeida.quimica@gmail.com</a>
+        </p>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // --- 1. CONFIGURAÇÕES & TRADUÇÃO & BANCO DE QUESTÕES TRADUZIDO ---
+        let currentLang = 'pt';
+        
+        const translations = {
+            pt: { 
+                nav_home: "Início", nav_subjects: "Matérias", nav_olympiads: "Olimpíadas", nav_tutoring: "Aulas", nav_support: "Suporte", 
+                hero_title: "Excelência em Exatas", hero_subtitle: "Preparação de elite para ENEM, OBQ, IChO e Ensino Superior.", 
+                btn_start: "Agendar Aula", feat_chem: "Química Avançada", feat_math: "Matemática Pura", feat_bio: "Biologia Moderna", feat_phys: "Física Aplicada", 
+                subjects_title: "Simulados Interativos", q_bank_chem: "Banco de Questões: 10 Itens", q_bank_phys: "Banco de Questões: 10 Itens", btn_quiz: "Iniciar Quiz",
+                obq_desc: "Preparação intensiva para a OBQ.", icho_desc: "Treinamento global para IChO.", 
+                schedule_title: "Agende sua Aula", schedule_desc: "Preencha seus dados para agendamento via WhatsApp.", 
+                form_name: "Seu Nome", form_subject: "Matéria de Interesse", form_time: "Melhor Horário", btn_book: "Agendar no WhatsApp", 
+                support_title: "Suporte", open_ticket: "Novo Ticket", ticket_sub: "Dúvidas complexas ou envio de materiais.", ticket_msg: "Mensagem", btn_send: "Enviar por E-mail", my_tickets: "Meus Tickets",
+                quiz_end: "Simulado Finalizado!", btn_restart: "Tentar Novamente", btn_back: "Voltar"
+            },
+            en: { 
+                nav_home: "Home", nav_subjects: "Subjects", nav_olympiads: "Olympiads", nav_tutoring: "Tutoring", nav_support: "Support", 
+                hero_title: "Excellence in Exact Sciences", hero_subtitle: "Elite preparation for SATs, IChO, and Higher Ed.", 
+                btn_start: "Book Class", feat_chem: "Advanced Chemistry", feat_math: "Pure Math", feat_bio: "Modern Biology", feat_phys: "Applied Physics", 
+                subjects_title: "Interactive Quizzes", q_bank_chem: "Question Bank: 10 Items", q_bank_phys: "Question Bank: 10 Items", btn_quiz: "Start Quiz",
+                obq_desc: "Intensive prep for National Olympiads.", icho_desc: "Global training for IChO.", 
+                schedule_title: "Book Class", schedule_desc: "Fill in your details to book via WhatsApp.", 
+                form_name: "Your Name", form_subject: "Subject", form_time: "Preferred Time", btn_book: "Book via WhatsApp", 
+                support_title: "Support", open_ticket: "New Ticket", ticket_sub: "Complex questions or material submission.", ticket_msg: "Message", btn_send: "Send via Email", my_tickets: "My Tickets",
+                quiz_end: "Quiz Finished!", btn_restart: "Try Again", btn_back: "Back"
+            },
+            es: { 
+                nav_home: "Inicio", nav_subjects: "Materias", nav_olympiads: "Olimpíadas", nav_tutoring: "Clases", nav_support: "Soporte", 
+                hero_title: "Excelencia en Ciencias Exactas", hero_subtitle: "Preparación de élite para Selectividad y IChO.", 
+                btn_start: "Reservar Clase", feat_chem: "Química Avanzada", feat_math: "Matemáticas Puras", feat_bio: "Biología Moderna", feat_phys: "Física Aplicada", 
+                subjects_title: "Simulacros Interactivos", q_bank_chem: "Banco de Preguntas: 10 Items", q_bank_phys: "Banco de Preguntas: 10 Items", btn_quiz: "Iniciar Quiz",
+                obq_desc: "Preparación intensiva.", icho_desc: "Entrenamiento global.", 
+                schedule_title: "Agenda tu Clase", schedule_desc: "Completa tus datos para reservar por WhatsApp.", 
+                form_name: "Tu Nombre", form_subject: "Materia", form_time: "Horario Preferido", btn_book: "Reservar por WhatsApp", 
+                support_title: "Soporte", open_ticket: "Nuevo Ticket", ticket_sub: "Dudas complejas o envío de materiales.", ticket_msg: "Mensaje", btn_send: "Enviar por Email", my_tickets: "Mis Tickets",
+                quiz_end: "¡Simulacro Terminado!", btn_restart: "Intentar de Nuevo", btn_back: "Volver"
+            }
+        };
+
+        const fullQuizDatabase = {
+            pt: {
+                chem: [{q:"Nox do Cromo no K2Cr2O7?",o:["+3","+5","+6","+7"],c:2}, {q:"pH neutro a 25°C?",o:["0","7","14","10"],c:1}, {q:"Orbital 'd' tem l=?",o:["0","1","2","3"],c:2}, {q:"Ligação com partilha de elétrons:",o:["Iônica","Covalente","Metálica","H"],c:1}, {q:"Geometria H2O:",o:["Linear","Angular","Trigonal","Tetra"],c:1}, {q:"Mais eletronegativo:",o:["O","Cl","F","N"],c:2}, {q:"Pressão total = soma parciais (Lei de):",o:["Boyle","Charles","Dalton","Avogadro"],c:2}, {q:"Ácido forte:",o:["CH3COOH","HF","HCl","HCN"],c:2}, {q:"Partícula negativa:",o:["Próton","Nêutron","Elétron","Pósitron"],c:2}, {q:"Refino petróleo:",o:["Filtração","Decantação","Destilação","Levigação"],c:2}],
+                phys: [{q:"Unidade Força SI:",o:["J","W","Pa","N"],c:3}, {q:"Ec = 1/2mv^2, v é:",o:["Volume","Voltagem","Velocidade","Visco"],c:2}, {q:"1ª Lei Newton:",o:["Inércia","Ação/Reação","Gravitação","Dinâmica"],c:0}, {q:"Gravidade Terra:",o:["5","9,8","12","15"],c:1}, {q:"Grandeza vetorial:",o:["Tempo","Massa","Temp","Deslocamento"],c:3}, {q:"Luz muda meio (fenômeno):",o:["Reflexão","Refração","Difração","Polar"],c:1}, {q:"V=R.i Lei de:",o:["Ohm","Coulomb","Joule","Faraday"],c:0}, {q:"Unidade Carga:",o:["A","V","C","Ohm"],c:2}, {q:"Energia altura:",o:["Cinética","Potencial","Térmica","Elástica"],c:1}, {q:"Mede pressão atm:",o:["Termômetro","Barômetro","Manômetro","Higro"],c:1}]
+            },
+            en: {
+                chem: [{q:"Oxidation state of Cr in K2Cr2O7?",o:["+3","+5","+6","+7"],c:2}, {q:"Neutral pH at 25°C?",o:["0","7","14","10"],c:1}, {q:"Azimuthal quantum number (l) for 'd'?",o:["0","1","2","3"],c:2}, {q:"Bond type sharing electrons:",o:["Ionic","Covalent","Metallic","Hydrogen"],c:1}, {q:"H2O Geometry:",o:["Linear","Bent","Trigonal","Tetrahedral"],c:1}, {q:"Most electronegative element:",o:["O","Cl","F","N"],c:2}, {q:"Total pressure = sum of partials (Law of):",o:["Boyle","Charles","Dalton","Avogadro"],c:2}, {q:"Strong acid:",o:["CH3COOH","HF","HCl","HCN"],c:2}, {q:"Negative subatomic particle:",o:["Proton","Neutron","Electron","Positron"],c:2}, {q:"Petroleum refining process:",o:["Filtration","Decantation","Distillation","Levigation"],c:2}],
+                phys: [{q:"SI Unit of Force:",o:["J","W","Pa","N"],c:3}, {q:"In Ec = 1/2mv^2, 'v' is:",o:["Volume","Voltage","Velocity","Viscosity"],c:2}, {q:"Newton's 1st Law:",o:["Inertia","Action/Reaction","Gravitation","Dynamics"],c:0}, {q:"Earth Gravity (approx):",o:["5","9.8","12","15"],c:1}, {q:"Vector quantity:",o:["Time","Mass","Temp","Displacement"],c:3}, {q:"Light changing medium (phenomenon):",o:["Reflection","Refraction","Diffraction","Polarization"],c:1}, {q:"V=R.i is Law of:",o:["Ohm","Coulomb","Joule","Faraday"],c:0}, {q:"Unit of Charge:",o:["A","V","C","Ohm"],c:2}, {q:"Energy due to height:",o:["Kinetic","Potential","Thermal","Elastic"],c:1}, {q:"Measures atm pressure:",o:["Thermometer","Barometer","Manometer","Hygrometer"],c:1}]
+            },
+            es: {
+                chem: [{q:"¿Nox del Cromo en K2Cr2O7?",o:["+3","+5","+6","+7"],c:2}, {q:"¿pH neutro a 25°C?",o:["0","7","14","10"],c:1}, {q:"¿Número cuántico (l) para 'd'?",o:["0","1","2","3"],c:2}, {q:"Enlace que comparte electrones:",o:["Iónico","Covalente","Metálico","Hidrógeno"],c:1}, {q:"Geometría H2O:",o:["Lineal","Angular","Trigonal","Tetraédrica"],c:1}, {q:"Elemento más electronegativo:",o:["O","Cl","F","N"],c:2}, {q:"Presión total = suma parciales (Ley de):",o:["Boyle","Charles","Dalton","Avogadro"],c:2}, {q:"Ácido fuerte:",o:["CH3COOH","HF","HCl","HCN"],c:2}, {q:"Partícula negativa:",o:["Protón","Neutrón","Electrón","Positrón"],c:2}, {q:"Refinación del petróleo:",o:["Filtración","Decantación","Destilación","Levigación"],c:2}],
+                phys: [{q:"Unidad de Fuerza SI:",o:["J","W","Pa","N"],c:3}, {q:"En Ec = 1/2mv^2, 'v' es:",o:["Volumen","Voltaje","Velocidad","Viscosidad"],c:2}, {q:"1ª Ley de Newton:",o:["Inercia","Acción/Reacción","Gravitación","Dinámica"],c:0}, {q:"Gravedad Tierra:",o:["5","9,8","12","15"],c:1}, {q:"Magnitud vectorial:",o:["Tiempo","Masa","Temp","Desplazamiento"],c:3}, {q:"Luz cambia medio (fenómeno):",o:["Reflexión","Refracción","Difracción","Polarización"],c:1}, {q:"V=R.i es Ley de:",o:["Ohm","Coulomb","Joule","Faraday"],c:0}, {q:"Unidad de Carga:",o:["A","V","C","Ohm"],c:2}, {q:"Energía por altura:",o:["Cinética","Potencial","Térmica","Elástica"],c:1}, {q:"Mide presión atm:",o:["Termómetro","Barómetro","Manómetro","Higrómetro"],c:1}]
+            }
+        };
+
+        function changeLanguage(lang) { 
+            currentLang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(e => { e.textContent = translations[lang][e.getAttribute('data-i18n')] || e.textContent; }); 
+        }
+        function router(pageId) { document.querySelectorAll('section').forEach(sec => sec.classList.remove('active')); document.getElementById(pageId).classList.add('active'); window.scrollTo(0,0); }
+        window.onload = () => changeLanguage('pt');
+
+        // 2. FUNÇÃO: ENVIAR TICKET PARA SEU E-MAIL
+        function createTicket(e) { 
+            e.preventDefault(); 
+            const message = document.getElementById('ticketMessage').value;
+            const myEmail = "thainara.almeida.quimica@gmail.com";
+            const ticketId = 'TCK-' + Math.floor(Math.random()*9000+1000);
+            const subject = encodeURIComponent(`[SUPORTE] Novo Ticket #${ticketId} - Site`);
+            const body = encodeURIComponent(`Olá Thainara,\n\nEstou enviando este ticket pelo site:\n\nMENSAGEM:\n${message}\n\nProtocolo: ${ticketId}`);
+            window.open(`mailto:${myEmail}?subject=${subject}&body=${body}`, '_blank');
+            document.getElementById('ticketList').insertAdjacentHTML('afterbegin', `<div class="ticket-item"><span class="status-badge">Enviado</span>#${ticketId}</div>`);
+            e.target.reset();
+        }
+
+        // 3. FUNÇÃO: AGENDAR VIA WHATSAPP (SEU NÚMERO)
+        function handleWhatsAppBooking(e) {
+            e.preventDefault();
+            const name = document.getElementById('bookingName').value;
+            const subject = document.getElementById('bookingSubject').value;
+            const time = document.getElementById('bookingTime').value;
+            const myNumber = "5571985543247"; 
+            const text = `Olá Thainara! Meu nome é *${name}*.\nGostaria de agendar uma aula de *${subject}*.\nPreferência de horário: *${time}*.`;
+            window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // 4. LÓGICA DO QUIZ MULTILÍNGUE
+        let currentQuizData=[], currentQIndex=0, score=0, currentSubject="";
+        
+        function shuffleArray(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+        
+        function startQuiz(s){
+            currentSubject=s;
+            score=0;
+            currentQIndex=0;
+            const questions = fullQuizDatabase[currentLang][s];
+            currentQuizData = shuffleArray([...questions]);
             
-            // --- DICIONÁRIO DE TRADUÇÕES ---
-            // Todo o texto do site está aqui. Edite-o se for necessário.
-            const translations = {
-                pt: {
-                    // SEO
-                    pageTitle: "Aulas Particulares de Química, Física, Matemática e Biologia",
-                    metaDescription: "Professora particular para aulas de reforço em Química, Física, Matemática e Biologia. Metodologia focada em resultados para provas e vestibulares.",
-                    // Cabeçalho
-                    mainTitle: "Reforço Escolar de Elite",
-                    mainSubtitle: "Aulas particulares de Química, Física, Matemática e Biologia",
-                    // Navegação
-                    navChemistry: "Química",
-                    navPhysics: "Física",
-                    navMath: "Matemática",
-                    navBiology: "Biologia",
-                    navContact: "Contato",
-                    // Seção Hero
-                    heroTitle: "Desvende seu potencial e conquiste seus objetivos acadêmicos.",
-                    heroSubtitle: "Metodologia focada em resolver suas dificuldades e fortalecer sua base de conhecimento para provas, vestibulares e concursos.",
-                    // Cards de Matérias
-                    chemTitle: "Química",
-                    chemDesc: "Das ligações atômicas à termoquímica. Domine os cálculos estequiométricos e a química orgânica de forma clara e objetiva.",
-                    physTitle: "Física",
-                    physDesc: "Entenda as leis de Newton, os segredos da eletricidade e as maravilhas da ondulatória. Transforme fórmulas complexas em raciocínio lógico.",
-                    mathTitle: "Matemática",
-                    mathDesc: "Desde a álgebra fundamental até o cálculo e a geometria. Desenvolva a confiança para resolver qualquer problema numérico.",
-                    bioTitle: "Biologia",
-                    bioDesc: "Explore os fascinantes mundos da citologia, genética e ecologia. Prepare-se para compreender a ciência da vida em todos os detalhes.",
-                    // Contato
-                    contactTitle: "Pronto para começar?",
-                    contactSubtitle: "Entre em contato para agendar sua primeira aula e tirar suas dúvidas.",
-                    btnWhatsapp: "Chamar no WhatsApp",
-                    btnEmail: "Enviar um E-mail",
-                    // Mensagens de Contato
-                    whatsappMessage: "Olá! Tenho interesse nas aulas particulares e gostaria de mais informações.",
-                    emailSubject: "Interesse em Aulas Particulares",
-                    emailBody: "Olá,\n\nGostaria de saber mais detalhes sobre as aulas particulares (horários, valores, metodologia, etc.).\n\nObrigado(a).",
-                    // Rodapé
-                    footerText: "© 2025 Aulas Particulares. Todos os direitos reservados."
-                },
-                en: {
-                    // SEO
-                    pageTitle: "Private Tutoring for Chemistry, Physics, Mathematics & Biology",
-                    metaDescription: "Private tutor for reinforcement classes in Chemistry, Physics, Mathematics, and Biology. Methodology focused on results for exams and university admission.",
-                    // Header
-                    mainTitle: "Elite Tutoring Services",
-                    mainSubtitle: "Private classes for Chemistry, Physics, Mathematics & Biology",
-                    // Navigation
-                    navChemistry: "Chemistry",
-                    navPhysics: "Physics",
-                    navMath: "Mathematics",
-                    navBiology: "Biology",
-                    navContact: "Contact",
-                    // Hero Section
-                    heroTitle: "Unlock your potential and achieve your academic goals.",
-                    heroSubtitle: "Methodology focused on solving your difficulties and strengthening your knowledge base for exams and university admissions.",
-                    // Subject Cards
-                    chemTitle: "Chemistry",
-                    chemDesc: "From atomic bonds to thermochemistry. Master stoichiometric calculations and organic chemistry in a clear and objective way.",
-                    physTitle: "Physics",
-                    physDesc: "Understand Newton's laws, the secrets of electricity, and the wonders of wave theory. Turn complex formulas into logical reasoning.",
-                    mathTitle: "Mathematics",
-                    mathDesc: "From fundamental algebra to calculus and geometry. Build the confidence to solve any numerical problem.",
-                    bioTitle: "Biology",
-                    bioDesc: "Explore the fascinating worlds of cytology, genetics, and ecology. Prepare to understand the science of life in all its details.",
-                    // Contact
-                    contactTitle: "Ready to get started?",
-                    contactSubtitle: "Contact me to schedule your first class and ask any questions.",
-                    btnWhatsapp: "Contact on WhatsApp",
-                    btnEmail: "Send an E-mail",
-                    // Contact Messages
-                    whatsappMessage: "Hello! I am interested in the private tutoring classes and would like more information.",
-                    emailSubject: "Interest in Private Tutoring",
-                    emailBody: "Hello,\n\nI would like to know more details about the private tutoring classes (schedules, prices, methodology, etc.).\n\nThank you.",
-                    // Footer
-                    footerText: "© 2025 Private Tutoring. All rights reserved."
-                },
-                es: {
-                    // SEO
-                    pageTitle: "Clases Particulares de Química, Física, Matemática y Biología",
-                    metaDescription: "Profesora particular para clases de refuerzo en Química, Física, Matemática y Biología. Metodología enfocada en resultados para exámenes y admisión universitaria.",
-                    // Encabezado
-                    mainTitle: "Clases Particulares de Élite",
-                    mainSubtitle: "Química, Física, Matemática y Biología",
-                    // Navegación
-                    navChemistry: "Química",
-                    navPhysics: "Física",
-                    navMath: "Matemática",
-                    navBiology: "Biología",
-                    navContact: "Contacto",
-                    // Sección Hero
-                    heroTitle: "Desbloquea tu potencial y alcanza tus metas académicas.",
-                    heroSubtitle: "Metodología enfocada en resolver tus dificultades y fortalecer tu base de conocimientos para exámenes y admisión universitaria.",
-                    // Tarjetas de Materias
-                    chemTitle: "Química",
-                    chemDesc: "Desde enlaces atómicos hasta termoquímica. Domina los cálculos estequiométricos y la química orgánica de forma clara y objetiva.",
-                    physTitle: "Física",
-                    physDesc: "Entiende las leyes de Newton, los secretos de la electricidad y las maravillas de la ondulación. Transforma fórmulas complexas en razonamiento lógico.",
-                    mathTitle: "Matemática",
-                    mathDesc: "Desde el álgebra fundamental hasta el cálculo y la geometría. Desarrolla la confianza para resolver cualquier problema numérico.",
-                    bioTitle: "Biología",
-                    bioDesc: "Explora los fascinantes mundos de la citología, genética y ecología. Prepárate para comprender la ciencia de la vida en todos sus detalles.",
-                    // Contacto
-                    contactTitle: "¿Listo para empezar?",
-                    contactSubtitle: "Contáctame para agendar tu primera clase y resolver tus dudas.",
-                    btnWhatsapp: "Contactar por WhatsApp",
-                    btnEmail: "Enviar un E-mail",
-                    // Mensajes de Contacto
-                    whatsappMessage: "¡Hola! Estoy interesado/a en las clases particulares y me gustaría recibir más información.",
-                    emailSubject: "Interés en Clases Particulares",
-                    emailBody: "Hola,\n\nMe gustaría saber más detalles sobre las clases particulares (horarios, precios, metodología, etc.).\n\nGracias.",
-                    // Pie de página
-                    footerText: "© 2025 Clases Particulares. Todos los derechos reservados."
-                }
-            };
+            document.getElementById('quiz-area').style.display='block';
+            document.getElementById('question-box').style.display='block';
+            document.getElementById('results-box').style.display='none';
             
-            // --- LÓGICA DE CONTATO E TRADUÇÃO ---
-            const seuNumeroWhatsapp = '5571985543247'; // Número do Brasil (código do país + DDD + número)
-            const seuEmail = 'thainara.almeida.quimica@gmail.com'; 
-
-            const langPtBtn = document.getElementById('lang-pt');
-            const langEnBtn = document.getElementById('lang-en');
-            const langEsBtn = document.getElementById('lang-es');
-            const allLangElements = document.querySelectorAll('[data-lang-key]');
+            const titles = { chem: {pt:"Química", en:"Chemistry", es:"Química"}, phys: {pt:"Física", en:"Physics", es:"Física"} };
+            document.getElementById('quiz-subject-title').innerText = titles[s][currentLang];
             
-            let currentLang = 'pt'; // Idioma padrão
+            document.getElementById('quiz-area').scrollIntoView({behavior:'smooth'});
+            loadQuestion();
+        }
 
-            const setLanguage = (lang) => {
-                currentLang = lang;
-                document.documentElement.lang = lang; 
+        function loadQuestion(){
+            const q=currentQuizData[currentQIndex];
+            const progText = { pt: "Questão", en: "Question", es: "Pregunta" };
+            document.getElementById('quiz-progress').innerText=`${progText[currentLang]} ${currentQIndex+1}/10`;
+            
+            document.getElementById('quiz-question').innerText=q.q;
+            document.getElementById('quiz-feedback').innerText='';
+            document.getElementById('btn-next-q').style.display='none';
+            
+            const d=document.getElementById('quiz-options');
+            d.innerHTML='';
+            q.o.forEach((opt,i)=>{
+                const b=document.createElement('button');
+                b.className='option-btn';
+                b.innerText=opt;
+                b.onclick=()=>check(b,i);
+                d.appendChild(b);
+            });
+        }
 
-                // Atualiza SEO tags
-                document.title = translations[lang].pageTitle;
-                document.querySelector('meta[name="description"]').setAttribute('content', translations[lang].metaDescription);
-                
-                // Atualiza o texto da página
-                allLangElements.forEach(element => {
-                    const key = element.dataset.langKey;
-                    if (translations[lang][key]) {
-                        element.textContent = translations[lang][key];
-                    }
-                });
-
-                // Atualiza o estado ativo dos botões de idioma
-                langPtBtn.classList.toggle('active', lang === 'pt');
-                langEnBtn.classList.toggle('active', lang === 'en');
-                langEsBtn.classList.toggle('active', lang === 'es');
+        function check(b,i){
+            const c=currentQuizData[currentQIndex].c;
+            document.querySelectorAll('.option-btn').forEach(btn=>btn.disabled=true);
+            const f=document.getElementById('quiz-feedback');
+            
+            const msg = {
+                correct: { pt: "Correto!", en: "Correct!", es: "¡Correcto!" },
+                wrong: { pt: "Errado. Correta:", en: "Wrong. Correct:", es: "Incorrecto. Correcta:" },
+                next: { pt: "Próxima", en: "Next", es: "Siguiente" },
+                result: { pt: "Ver Resultado", en: "See Results", es: "Ver Resultados" }
             };
 
-            langPtBtn.addEventListener('click', () => setLanguage('pt'));
-            langEnBtn.addEventListener('click', () => setLanguage('en'));
-            langEsBtn.addEventListener('click', () => setLanguage('es'));
-
-            // Lógica dos botões de contato
-            const whatsappBtn = document.getElementById('whatsapp-btn');
-            const emailBtn = document.getElementById('email-btn');
-
-            whatsappBtn.addEventListener('click', function() {
-                const message = encodeURIComponent(translations[currentLang].whatsappMessage);
-                const whatsappUrl = `https://wa.me/${seuNumeroWhatsapp}?text=${message}`;
-                window.open(whatsappUrl, '_blank');
-            });
-
-            emailBtn.addEventListener('click', function() {
-                const subject = encodeURIComponent(translations[currentLang].emailSubject);
-                const body = encodeURIComponent(translations[currentLang].emailBody);
-                const emailUrl = `mailto:${seuEmail}?subject=${subject}&body=${body}`;
-                window.location.href = emailUrl;
-            });
+            if(i===c){
+                b.classList.add('correct');
+                f.innerText = msg.correct[currentLang];
+                f.style.color="#155724"; f.style.background="#d4edda";
+                score++;
+            }else{
+                b.classList.add('wrong');
+                document.querySelectorAll('.option-btn')[c].classList.add('correct');
+                f.innerText = `${msg.wrong[currentLang]} ${currentQuizData[currentQIndex].o[c]}`;
+                f.style.color="#721c24"; f.style.background="#f8d7da";
+            }
             
-            // Lógica de scroll suave
-            document.querySelectorAll('.main-menu a').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-                });
-            });
+            const n=document.getElementById('btn-next-q');
+            const nText = document.getElementById('btn-next-text');
+            n.style.display='inline-block';
+            
+            if(currentQIndex===9) nText.innerText = msg.result[currentLang];
+            else nText.innerText = msg.next[currentLang];
+        }
 
-            // Estabelece o idioma inicial ao carregar a página
-            setLanguage(currentLang);
-        });
+        function nextQuestion(){
+            currentQIndex++;
+            if(currentQIndex<10) loadQuestion();
+            else showResults();
+        }
+
+        function showResults(){
+            document.getElementById('question-box').style.display='none';
+            document.getElementById('results-box').style.display='block';
+            document.getElementById('final-score-display').innerText=`${score} / 10`;
+        }
+
+        function restartQuiz(){startQuiz(currentSubject);}
     </script>
 </body>
-</html>
+</html> 
