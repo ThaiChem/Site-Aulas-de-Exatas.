@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Química com Thainara | Aulas Particulares</title>
-    <meta name="description" content="Aulas de Química, Física e Matemática. Preparação para ENEM e Olimpíadas. Química com Thainara.">
+    <meta name="description" content="Aulas de Química, Física e Matemática. Preparação para ENEM e Olimpíadas.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -32,6 +32,10 @@
         nav ul { display: flex; gap: 20px; }
         nav a:hover, nav a.active { color: var(--secondary); opacity: 1; }
         
+        /* Estilo especial para link externo */
+        nav a.external-link { color: var(--warning); }
+        nav a.external-link:hover { text-decoration: underline; color: #fff; }
+
         .lang-selector select { background: transparent; color: white; border: 1px solid var(--secondary); padding: 5px; border-radius: 4px; }
         .lang-selector select option { color: var(--dark); }
 
@@ -73,7 +77,6 @@
         .quiz-results-box { text-align: center; padding: 3rem 1rem; }
         .final-score { font-size: 3.5rem; color: var(--accent); font-weight: 800; display: block; margin: 1rem 0; }
         
-        /* NOVO: Botão Reiniciar no Topo do Quiz */
         .btn-mini-restart {
             background: none; border: none; color: var(--accent); 
             cursor: pointer; font-size: 1.2rem; transition: transform 0.3s;
@@ -117,10 +120,11 @@
         <nav>
             <ul>
                 <li><a onclick="router('home')" data-i18n="nav_home">Início</a></li>
-                <li><a onclick="router('quiz')" data-i18n="nav_quiz">Quiz</a></li>
+                <li><a onclick="router('subjects')" data-i18n="nav_subjects">Matérias</a></li>
                 <li><a onclick="router('olympiads')" data-i18n="nav_olympiads">Olimpíadas</a></li>
                 <li><a onclick="router('tutoring')" data-i18n="nav_tutoring">Aulas</a></li>
                 <li><a onclick="router('support')" data-i18n="nav_support">Suporte</a></li>
+                <li><a href="https://thaichem.github.io/chemistrysiteportuguese/quimicacomthai.html" target="_blank" class="external-link" data-i18n="nav_blog">Blog</a></li>
             </ul>
         </nav>
         <div class="lang-selector">
@@ -136,7 +140,7 @@
         <section id="home" class="active">
             <div class="hero">
                 <h1 data-i18n="hero_title">Excelência em Exatas</h1>
-                <p data-i18n="hero_subtitle">Preparação para ENEM, OBQ, IChO e Ensino Superior.</p>
+                <p data-i18n="hero_subtitle">Preparação de elite para ENEM, OBQ, IChO e Ensino Superior.</p>
                 <button class="btn" onclick="router('tutoring')" data-i18n="btn_start">Agendar Aula</button>
             </div>
             <div class="grid-container">
@@ -147,7 +151,7 @@
             </div>
         </section>
 
-        <section id="quiz">
+        <section id="subjects">
             <h2 data-i18n="subjects_title">Simulados Interativos</h2>
             <div class="grid-container">
                 <div class="card">
@@ -165,7 +169,7 @@
             <div id="quiz-area" class="quiz-container" style="display:none;">
                 <div id="question-box">
                     <div class="quiz-header">
-                        <span id="quiz-subject-title">Quiz</span>
+                        <span id="quiz-subject-title">Matéria</span>
                         <div>
                             <span id="quiz-progress">Questão 1</span>
                             <button class="btn-mini-restart" onclick="restartQuiz()" title="Reiniciar / Restart"><i class="fa-solid fa-rotate-right"></i></button>
@@ -257,7 +261,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Química com Thainara Education.</p>
+        <p>&copy; 2023 Química com Thainara Education.</p>
         <p style="margin-top: 10px;">
             <i class="fa-solid fa-envelope"></i> 
             <a href="mailto:thainara.almeida.quimica@gmail.com">thainara.almeida.quimica@gmail.com</a>
@@ -270,7 +274,7 @@
         
         const translations = {
             pt: { 
-                nav_home: "Início", nav_subjects: "Matérias", nav_olympiads: "Olimpíadas", nav_tutoring: "Aulas", nav_support: "Suporte", 
+                nav_home: "Início", nav_subjects: "Matérias", nav_olympiads: "Olimpíadas", nav_tutoring: "Aulas", nav_support: "Suporte", nav_blog: "Blog",
                 hero_title: "Excelência em Exatas", hero_subtitle: "Preparação de elite para ENEM, OBQ, IChO e Ensino Superior.", 
                 btn_start: "Agendar Aula", feat_chem: "Química Avançada", feat_math: "Matemática Pura", feat_bio: "Biologia Moderna", feat_phys: "Física Aplicada", 
                 subjects_title: "Simulados Interativos", q_bank_chem: "Banco de Questões: 10 Itens", q_bank_phys: "Banco de Questões: 10 Itens", btn_quiz: "Iniciar Quiz",
@@ -281,7 +285,7 @@
                 quiz_end: "Simulado Finalizado!", btn_restart: "Tentar Novamente", btn_back: "Voltar"
             },
             en: { 
-                nav_home: "Home", nav_subjects: "Subjects", nav_olympiads: "Olympiads", nav_tutoring: "Tutoring", nav_support: "Support", 
+                nav_home: "Home", nav_subjects: "Subjects", nav_olympiads: "Olympiads", nav_tutoring: "Tutoring", nav_support: "Support", nav_blog: "Blog",
                 hero_title: "Excellence in Exact Sciences", hero_subtitle: "Elite preparation for SATs, IChO, and Higher Ed.", 
                 btn_start: "Book Class", feat_chem: "Advanced Chemistry", feat_math: "Pure Math", feat_bio: "Modern Biology", feat_phys: "Applied Physics", 
                 subjects_title: "Interactive Quizzes", q_bank_chem: "Question Bank: 10 Items", q_bank_phys: "Question Bank: 10 Items", btn_quiz: "Start Quiz",
@@ -292,7 +296,7 @@
                 quiz_end: "Quiz Finished!", btn_restart: "Try Again", btn_back: "Back"
             },
             es: { 
-                nav_home: "Inicio", nav_subjects: "Materias", nav_olympiads: "Olimpíadas", nav_tutoring: "Clases", nav_support: "Soporte", 
+                nav_home: "Inicio", nav_subjects: "Materias", nav_olympiads: "Olimpíadas", nav_tutoring: "Clases", nav_support: "Soporte", nav_blog: "Blog",
                 hero_title: "Excelencia en Ciencias Exactas", hero_subtitle: "Preparación de élite para Selectividad y IChO.", 
                 btn_start: "Reservar Clase", feat_chem: "Química Avanzada", feat_math: "Matemáticas Puras", feat_bio: "Biología Moderna", feat_phys: "Física Aplicada", 
                 subjects_title: "Simulacros Interactivos", q_bank_chem: "Banco de Preguntas: 10 Items", q_bank_phys: "Banco de Preguntas: 10 Items", btn_quiz: "Iniciar Quiz",
