@@ -31,8 +31,6 @@
         .logo span { color: var(--secondary); }
         nav ul { display: flex; gap: 20px; }
         nav a:hover, nav a.active { color: var(--secondary); opacity: 1; }
-        
-        /* Estilo especial para link externo */
         nav a.external-link { color: var(--warning); }
         nav a.external-link:hover { text-decoration: underline; color: #fff; }
 
@@ -60,6 +58,13 @@
         .card:hover { transform: translateY(-5px); }
         .card i { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
 
+        /* TEXT BOX (NOVO ESTILO PARA O TEXTO LONGO) */
+        .long-text-box {
+            background: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;
+            border-left: 5px solid var(--accent); text-align: justify;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); white-space: pre-line;
+        }
+
         .form-group { margin-bottom: 1.5rem; }
         label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
         input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; }
@@ -76,12 +81,7 @@
         .btn-restart { background-color: var(--secondary); margin-top: 15px; }
         .quiz-results-box { text-align: center; padding: 3rem 1rem; }
         .final-score { font-size: 3.5rem; color: var(--accent); font-weight: 800; display: block; margin: 1rem 0; }
-        
-        .btn-mini-restart {
-            background: none; border: none; color: var(--accent); 
-            cursor: pointer; font-size: 1.2rem; transition: transform 0.3s;
-            margin-left: 15px;
-        }
+        .btn-mini-restart { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 1.2rem; transition: transform 0.3s; margin-left: 15px; }
         .btn-mini-restart:hover { transform: rotate(180deg); color: var(--primary); }
 
         /* BOTÃO FLUTUANTE WPP */
@@ -121,7 +121,7 @@
             <ul>
                 <li><a onclick="router('home')" data-i18n="nav_home">Início</a></li>
                 <li><a onclick="router('subjects')" data-i18n="nav_subjects">Matérias</a></li>
-                <li><a onclick="router('olympiads')" data-i18n="nav_olympiads">Olimpíadas</a></li>
+                <li><a onclick="router('olympiads')" data-i18n="nav_olympiads">Exames & Olimpíadas</a></li>
                 <li><a onclick="router('tutoring')" data-i18n="nav_tutoring">Aulas</a></li>
                 <li><a onclick="router('support')" data-i18n="nav_support">Suporte</a></li>
                 <li><a href="https://thaichem.github.io/chemistrysiteportuguese/quimicacomthai.html" target="_blank" class="external-link" data-i18n="nav_blog">Blog</a></li>
@@ -190,10 +190,30 @@
         </section>
 
         <section id="olympiads">
-            <h2 data-i18n="nav_olympiads">Preparação Olímpica</h2>
+            <h2 data-i18n="nav_olympiads">Exames & Olimpíadas</h2>
+            
+            <div class="long-text-box">
+                <p data-i18n="olympiads_long_text">
+                    </p>
+            </div>
+
             <div class="grid-container">
-                <div class="card" style="border-top-color: gold;"><h3>OBQ (Brasil)</h3><p data-i18n="obq_desc">Preparação intensiva.</p></div>
-                <div class="card" style="border-top-color: gold;"><h3>IChO (Internacional)</h3><p data-i18n="icho_desc">Treinamento global.</p></div>
+                <div class="card" style="border-top-color: var(--success);">
+                    <h3><i class="fa-solid fa-file-contract" style="color: var(--success);"></i> ENEM</h3>
+                    <p data-i18n="enem_desc">Foco total na matriz de referência e notas máximas.</p>
+                </div>
+                <div class="card" style="border-top-color: var(--primary);">
+                    <h3><i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i> Superior</h3>
+                    <p data-i18n="uni_desc">Cálculo, Química Geral e Física para universitários.</p>
+                </div>
+                <div class="card" style="border-top-color: gold;">
+                    <h3>OBQ (Brasil)</h3>
+                    <p data-i18n="obq_desc">Preparação intensiva para a OBQ.</p>
+                </div>
+                <div class="card" style="border-top-color: gold;">
+                    <h3>IChO (Inter)</h3>
+                    <p data-i18n="icho_desc">Treinamento global para IChO.</p>
+                </div>
             </div>
         </section>
 
@@ -223,6 +243,8 @@
                                 <option value="Matemática">Matemática</option>
                                 <option value="Biologia">Biologia</option>
                                 <option value="Olimpíadas">Treino Olimpíadas</option>
+                                <option value="ENEM">Preparatório ENEM</option>
+                                <option value="Superior">Ensino Superior</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -274,39 +296,95 @@
         
         const translations = {
             pt: { 
-                nav_home: "Início", nav_subjects: "Matérias", nav_olympiads: "Olimpíadas", nav_tutoring: "Aulas", nav_support: "Suporte", nav_blog: "Blog",
+                nav_home: "Início", nav_subjects: "Matérias", nav_olympiads: "Exames", nav_tutoring: "Aulas", nav_support: "Suporte", nav_blog: "Blog",
                 hero_title: "Excelência em Exatas", hero_subtitle: "Preparação de elite para ENEM, OBQ, IChO e Ensino Superior.", 
                 btn_start: "Agendar Aula", feat_chem: "Química Avançada", feat_math: "Matemática Pura", feat_bio: "Biologia Moderna", feat_phys: "Física Aplicada", 
                 subjects_title: "Simulados Interativos", q_bank_chem: "Banco de Questões: 10 Itens", q_bank_phys: "Banco de Questões: 10 Itens", btn_quiz: "Iniciar Quiz",
+                
+                // NOVO TEXTO LONGO
+                olympiads_long_text: `A preparação de alto rendimento é o caminho mais seguro para as melhores universidades do mundo. A **Olimpíada Brasileira de Química (OBQ)** e a **IChO (Internacional)** vão muito além de medalhas: elas abrem portas exclusivas. No Brasil, instituições de elite como a **USP, Unicamp e UNESP** possuem as "Vagas Olímpicas", permitindo o ingresso direto de medalhistas sem a necessidade do vestibular tradicional. Internacionalmente, universidades como **MIT, Harvard e Oxford** veem medalhas olímpicas como o indicador máximo de talento.\n\nParalelamente, o domínio profundo exigido pelas olimpíadas torna o **ENEM** e vestibulares de Medicina desafios muito mais acessíveis, garantindo notas máximas em Ciências da Natureza.\n\n**Como minha mentoria transforma você?** Não ensinamos apenas conteúdos; formamos atletas intelectuais. Minha metodologia foca em aprofundamento teórico de nível superior, resolução estratégica de problemas complexos e controle emocional. Identificamos suas lacunas, personalizamos o cronograma e treinamos exaustivamente até que a 'química avançada' se torne sua segunda língua. Seja para conquistar o ouro ou para garantir sua vaga em Medicina, vamos transformar seu potencial em resultados de campeão.`,
+
                 obq_desc: "Preparação intensiva para a OBQ.", icho_desc: "Treinamento global para IChO.", 
+                enem_desc: "Foco total na matriz de referência e notas máximas.", uni_desc: "Cálculo, Química Geral e Física para universitários.",
                 schedule_title: "Agende sua Aula", schedule_desc: "Preencha seus dados para agendamento via WhatsApp.", 
                 form_name: "Seu Nome", form_subject: "Matéria de Interesse", form_time: "Melhor Horário", btn_book: "Agendar no WhatsApp", 
                 support_title: "Suporte", open_ticket: "Novo Ticket", ticket_sub: "Dúvidas complexas ou envio de materiais.", ticket_msg: "Mensagem", btn_send: "Enviar por E-mail", my_tickets: "Meus Tickets",
                 quiz_end: "Simulado Finalizado!", btn_restart: "Tentar Novamente", btn_back: "Voltar"
             },
             en: { 
-                nav_home: "Home", nav_subjects: "Subjects", nav_olympiads: "Olympiads", nav_tutoring: "Tutoring", nav_support: "Support", nav_blog: "Blog",
+                nav_home: "Home", nav_subjects: "Subjects", nav_olympiads: "Exams", nav_tutoring: "Tutoring", nav_support: "Support", nav_blog: "Blog",
                 hero_title: "Excellence in Exact Sciences", hero_subtitle: "Elite preparation for SATs, IChO, and Higher Ed.", 
                 btn_start: "Book Class", feat_chem: "Advanced Chemistry", feat_math: "Pure Math", feat_bio: "Modern Biology", feat_phys: "Applied Physics", 
                 subjects_title: "Interactive Quizzes", q_bank_chem: "Question Bank: 10 Items", q_bank_phys: "Question Bank: 10 Items", btn_quiz: "Start Quiz",
+                
+                // NOVO TEXTO LONGO (EN)
+                olympiads_long_text: `High-performance preparation is the safest path to the world's best universities. The **Brazilian Chemistry Olympiad (OBQ)** and the **International Chemistry Olympiad (IChO)** are more than just medals; they are passports. In Brazil, elite institutions like **USP and Unicamp** offer 'Olympic Seats', allowing direct admission for medalists, bypassing traditional entrance exams. Internationally, universities like **MIT, Harvard, and Oxford** view olympiad medals as the ultimate indicator of talent.\n\nFurthermore, the deep mastery required for olympiads makes standardized exams like **ENEM** (Brazil's SAT equivalent) significantly more accessible, ensuring top scores in Natural Sciences.\n\n**How does my mentorship transform you?** We don't just teach content; we train intellectual athletes. My methodology focuses on university-level theoretical depth, strategic problem-solving, and emotional control. We identify your gaps, personalize your schedule, and train exhaustively until 'advanced chemistry' becomes your second language. Whether aiming for Gold or admission to Medical School, we will turn your potential into championship results.`,
+
                 obq_desc: "Intensive prep for National Olympiads.", icho_desc: "Global training for IChO.", 
+                enem_desc: "Complete preparation for the National Exam.", uni_desc: "Calculus, General Chemistry and Physics for undergrads.",
                 schedule_title: "Book Class", schedule_desc: "Fill in your details to book via WhatsApp.", 
                 form_name: "Your Name", form_subject: "Subject", form_time: "Preferred Time", btn_book: "Book via WhatsApp", 
                 support_title: "Support", open_ticket: "New Ticket", ticket_sub: "Complex questions or material submission.", ticket_msg: "Message", btn_send: "Send via Email", my_tickets: "My Tickets",
                 quiz_end: "Quiz Finished!", btn_restart: "Try Again", btn_back: "Back"
             },
             es: { 
-                nav_home: "Inicio", nav_subjects: "Materias", nav_olympiads: "Olimpíadas", nav_tutoring: "Clases", nav_support: "Soporte", nav_blog: "Blog",
+                nav_home: "Inicio", nav_subjects: "Materias", nav_olympiads: "Exámenes", nav_tutoring: "Clases", nav_support: "Soporte", nav_blog: "Blog",
                 hero_title: "Excelencia en Ciencias Exactas", hero_subtitle: "Preparación de élite para Selectividad y IChO.", 
                 btn_start: "Reservar Clase", feat_chem: "Química Avanzada", feat_math: "Matemáticas Puras", feat_bio: "Biología Moderna", feat_phys: "Física Aplicada", 
                 subjects_title: "Simulacros Interactivos", q_bank_chem: "Banco de Preguntas: 10 Items", q_bank_phys: "Banco de Preguntas: 10 Items", btn_quiz: "Iniciar Quiz",
+                
+                // NOVO TEXTO LONGO (ES)
+                olympiads_long_text: `La preparación de alto rendimiento es el camino más seguro hacia las mejores universidades del mundo. La **Olimpíada Brasileña de Química (OBQ)** y la **IChO (Internacional)** van más allá de las medallas: abren puertas exclusivas. En Brasil, instituciones de élite como la **USP y Unicamp** ofrecen 'Plazas Olímpicas', permitiendo el ingreso directo a medallistas sin el examen de ingreso tradicional. Internacionalmente, universidades como **MIT, Harvard y Oxford** ven las medallas como el indicador máximo de talento.\n\nAdemás, el dominio profundo exigido por las olimpíadas hace que el **ENEM** sea un desafío mucho más accesible, garantizando notas máximas en Ciencias.\n\n**¿Cómo te transforma mi mentoría?** No solo enseñamos contenidos; formamos atletas intelectuales. Mi metodología se enfoca en la profundidad teórica de nivel universitario, la resolución estratégica de problemas y el control emocional. Identificamos tus lagunas, personalizamos tu cronograma y entrenamos hasta que la 'química avanzada' sea tu segunda lengua. Ya sea para conquistar el oro o para ingresar a Medicina, transformaremos tu potencial en resultados de campeón.`,
+
                 obq_desc: "Preparación intensiva.", icho_desc: "Entrenamiento global.", 
+                enem_desc: "Preparación completa para el Examen Nacional.", uni_desc: "Cálculo, Química General y Física para universitarios.",
                 schedule_title: "Agenda tu Clase", schedule_desc: "Completa tus datos para reservar por WhatsApp.", 
                 form_name: "Tu Nombre", form_subject: "Materia", form_time: "Horario Preferido", btn_book: "Reservar por WhatsApp", 
                 support_title: "Soporte", open_ticket: "Nuevo Ticket", ticket_sub: "Dudas complejas o envío de materiales.", ticket_msg: "Mensaje", btn_send: "Enviar por Email", my_tickets: "Mis Tickets",
                 quiz_end: "¡Simulacro Terminado!", btn_restart: "Intentar de Nuevo", btn_back: "Volver"
             }
         };
+
+        // --- MANTER LOGICA DO QUIZ E OUTRAS FUNÇÕES IGUAIS ---
+        
+        function changeLanguage(lang) { 
+            currentLang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(e => { 
+                const key = e.getAttribute('data-i18n');
+                if(translations[lang][key]) {
+                    // Se for o texto longo, usa innerHTML para processar negritos e quebras de linha
+                    if(key === 'olympiads_long_text') {
+                        e.innerHTML = translations[lang][key].replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                    } else {
+                        e.textContent = translations[lang][key];
+                    }
+                }
+            }); 
+        }
+
+        function router(pageId) { document.querySelectorAll('section').forEach(sec => sec.classList.remove('active')); document.getElementById(pageId).classList.add('active'); window.scrollTo(0,0); }
+        
+        function createTicket(e) { 
+            e.preventDefault(); 
+            const message = document.getElementById('ticketMessage').value;
+            const myEmail = "thainara.almeida.quimica@gmail.com";
+            const ticketId = 'TCK-' + Math.floor(Math.random()*9000+1000);
+            const subject = encodeURIComponent(`[SUPORTE] Novo Ticket #${ticketId} - Site`);
+            const body = encodeURIComponent(`Olá Thainara,\n\nEstou enviando este ticket pelo site:\n\nMENSAGEM:\n${message}\n\nProtocolo: ${ticketId}`);
+            window.open(`mailto:${myEmail}?subject=${subject}&body=${body}`, '_blank');
+            document.getElementById('ticketList').insertAdjacentHTML('afterbegin', `<div class="ticket-item"><span class="status-badge">Enviado</span>#${ticketId}</div>`);
+            e.target.reset();
+        }
+
+        function handleWhatsAppBooking(e) {
+            e.preventDefault();
+            const name = document.getElementById('bookingName').value;
+            const subject = document.getElementById('bookingSubject').value;
+            const time = document.getElementById('bookingTime').value;
+            const myNumber = "5571985543247"; 
+            const text = `Olá Thainara! Meu nome é *${name}*.\nGostaria de agendar uma aula de *${subject}*.\nPreferência de horário: *${time}*.`;
+            window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(text)}`, '_blank');
+        }
 
         const fullQuizDatabase = {
             pt: {
@@ -323,56 +401,17 @@
             }
         };
 
-        function changeLanguage(lang) { 
-            currentLang = lang;
-            document.querySelectorAll('[data-i18n]').forEach(e => { e.textContent = translations[lang][e.getAttribute('data-i18n')] || e.textContent; }); 
-        }
-        function router(pageId) { document.querySelectorAll('section').forEach(sec => sec.classList.remove('active')); document.getElementById(pageId).classList.add('active'); window.scrollTo(0,0); }
-        window.onload = () => changeLanguage('pt');
-
-        // 2. FUNÇÃO: ENVIAR TICKET PARA SEU E-MAIL
-        function createTicket(e) { 
-            e.preventDefault(); 
-            const message = document.getElementById('ticketMessage').value;
-            const myEmail = "thainara.almeida.quimica@gmail.com";
-            const ticketId = 'TCK-' + Math.floor(Math.random()*9000+1000);
-            const subject = encodeURIComponent(`[SUPORTE] Novo Ticket #${ticketId} - Site`);
-            const body = encodeURIComponent(`Olá Thainara,\n\nEstou enviando este ticket pelo site:\n\nMENSAGEM:\n${message}\n\nProtocolo: ${ticketId}`);
-            window.open(`mailto:${myEmail}?subject=${subject}&body=${body}`, '_blank');
-            document.getElementById('ticketList').insertAdjacentHTML('afterbegin', `<div class="ticket-item"><span class="status-badge">Enviado</span>#${ticketId}</div>`);
-            e.target.reset();
-        }
-
-        // 3. FUNÇÃO: AGENDAR VIA WHATSAPP (SEU NÚMERO)
-        function handleWhatsAppBooking(e) {
-            e.preventDefault();
-            const name = document.getElementById('bookingName').value;
-            const subject = document.getElementById('bookingSubject').value;
-            const time = document.getElementById('bookingTime').value;
-            const myNumber = "5571985543247"; 
-            const text = `Olá Thainara! Meu nome é *${name}*.\nGostaria de agendar uma aula de *${subject}*.\nPreferência de horário: *${time}*.`;
-            window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(text)}`, '_blank');
-        }
-
-        // 4. LÓGICA DO QUIZ MULTILÍNGUE
-        let currentQuizData=[], currentQIndex=0, score=0, currentSubject="";
-        
         function shuffleArray(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
         
         function startQuiz(s){
-            currentSubject=s;
-            score=0;
-            currentQIndex=0;
+            currentSubject=s; score=0; currentQIndex=0;
             const questions = fullQuizDatabase[currentLang][s];
             currentQuizData = shuffleArray([...questions]);
-            
             document.getElementById('quiz-area').style.display='block';
             document.getElementById('question-box').style.display='block';
             document.getElementById('results-box').style.display='none';
-            
             const titles = { chem: {pt:"Química", en:"Chemistry", es:"Química"}, phys: {pt:"Física", en:"Physics", es:"Física"} };
             document.getElementById('quiz-subject-title').innerText = titles[s][currentLang];
-            
             document.getElementById('quiz-area').scrollIntoView({behavior:'smooth'});
             loadQuestion();
         }
@@ -381,11 +420,9 @@
             const q=currentQuizData[currentQIndex];
             const progText = { pt: "Questão", en: "Question", es: "Pregunta" };
             document.getElementById('quiz-progress').innerText=`${progText[currentLang]} ${currentQIndex+1}/10`;
-            
             document.getElementById('quiz-question').innerText=q.q;
             document.getElementById('quiz-feedback').innerText='';
             document.getElementById('btn-next-q').style.display='none';
-            
             const d=document.getElementById('quiz-options');
             d.innerHTML='';
             q.o.forEach((opt,i)=>{
@@ -401,7 +438,6 @@
             const c=currentQuizData[currentQIndex].c;
             document.querySelectorAll('.option-btn').forEach(btn=>btn.disabled=true);
             const f=document.getElementById('quiz-feedback');
-            
             const msg = {
                 correct: { pt: "Correto!", en: "Correct!", es: "¡Correcto!" },
                 wrong: { pt: "Errado. Correta:", en: "Wrong. Correct:", es: "Incorrecto. Correcta:" },
@@ -410,38 +446,21 @@
             };
 
             if(i===c){
-                b.classList.add('correct');
-                f.innerText = msg.correct[currentLang];
-                f.style.color="#155724"; f.style.background="#d4edda";
-                score++;
+                b.classList.add('correct'); f.innerText = msg.correct[currentLang]; f.style.color="#155724"; f.style.background="#d4edda"; score++;
             }else{
-                b.classList.add('wrong');
-                document.querySelectorAll('.option-btn')[c].classList.add('correct');
-                f.innerText = `${msg.wrong[currentLang]} ${currentQuizData[currentQIndex].o[c]}`;
-                f.style.color="#721c24"; f.style.background="#f8d7da";
+                b.classList.add('wrong'); document.querySelectorAll('.option-btn')[c].classList.add('correct'); f.innerText = `${msg.wrong[currentLang]} ${currentQuizData[currentQIndex].o[c]}`; f.style.color="#721c24"; f.style.background="#f8d7da";
             }
-            
             const n=document.getElementById('btn-next-q');
             const nText = document.getElementById('btn-next-text');
             n.style.display='inline-block';
-            
-            if(currentQIndex===9) nText.innerText = msg.result[currentLang];
-            else nText.innerText = msg.next[currentLang];
+            if(currentQIndex===9) nText.innerText = msg.result[currentLang]; else nText.innerText = msg.next[currentLang];
         }
 
-        function nextQuestion(){
-            currentQIndex++;
-            if(currentQIndex<10) loadQuestion();
-            else showResults();
-        }
-
-        function showResults(){
-            document.getElementById('question-box').style.display='none';
-            document.getElementById('results-box').style.display='block';
-            document.getElementById('final-score-display').innerText=`${score} / 10`;
-        }
-
+        function nextQuestion(){ currentQIndex++; if(currentQIndex<10) loadQuestion(); else showResults(); }
+        function showResults(){ document.getElementById('question-box').style.display='none'; document.getElementById('results-box').style.display='block'; document.getElementById('final-score-display').innerText=`${score} / 10`; }
         function restartQuiz(){startQuiz(currentSubject);}
+        
+        window.onload = () => changeLanguage('pt');
     </script>
 </body>
 </html> 
