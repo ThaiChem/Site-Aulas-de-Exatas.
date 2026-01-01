@@ -1,466 +1,279 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Química com Thainara | Aulas Particulares</title>
-    <meta name="description" content="Aulas de Química, Física e Matemática. Preparação para ENEM e Olimpíadas. Quimica com Thainara.OBQ">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        /* --- ESTILOS GERAIS --- */
-        :root {
-            --primary: #0a2463; --secondary: #3e92cc; --accent: #d8315b;
-            --light: #f8f9fa; --dark: #1e1e24; --success: #28a745; --warning: #ffc107;
-            --whatsapp: #25D366; 
-            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            --transition: all 0.3s ease;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-main); background-color: var(--light); color: var(--dark); line-height: 1.6; }
-        a { text-decoration: none; color: inherit; cursor: pointer; }
-        ul { list-style: none; }
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="pt-BR">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* HEADER */
-        header {
-            background-color: var(--primary); color: white; padding: 1rem 5%;
-            position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo { font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
-        .logo span { color: var(--secondary); }
-        nav ul { display: flex; gap: 20px; }
-        nav a:hover, nav a.active { color: var(--secondary); opacity: 1; }
-        nav a.external-link { color: var(--warning); }
-        nav a.external-link:hover { text-decoration: underline; color: #fff; }
+  <title>Portfólio Educacional de Química | Thainara de Almeida</title>
+  <meta name="description" content="Portfólio educativo de Química: aplicativo, blog, projetos didáticos e divulgação científica por Thainara de Almeida.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thaichem.github.io/Site-Aulas-de-Exatas./codigosite.html">
 
-        .lang-selector select { background: transparent; color: white; border: 1px solid var(--secondary); padding: 5px; border-radius: 4px; }
-        .lang-selector select option { color: var(--dark); }
+  <!-- Schema Educacional -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Portfólio Educacional em Química - Thainara de Almeida",
+    "description": "Produção de conteúdo educativo, projetos educacionais, aplicativo e blog de Química.",
+    "areaServed": "BR",
+    "educationalLevel": ["Ensino Médio", "Graduação"],
+    "teaches": "Química",
+    "author": {
+      "@type": "Person",
+      "name": "Thainara de Almeida",
+      "jobTitle": "Educadora em Química"
+    },
+    "sameAs": [
+      "https://www.youtube.com/@quimicacomthainara1371",
+      "https://www.instagram.com/thai.chemistry/"
+    ]
+  }
+  </script>
 
-        /* HERO & LAYOUT */
-        main { min-height: 80vh; padding: 2rem 5%; }
-        section { display: none; animation: fadeIn 0.5s; }
-        section.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  <!-- ===== ESTILOS ===== -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #1f2933; background: #ffffff; }
+    a { text-decoration: none; }
 
-        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); color: white; padding: 4rem 2rem; border-radius: 15px; text-align: center; margin-bottom: 3rem; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        
-        /* BOTÕES */
-        .btn { display: inline-block; background: var(--accent); color: white; padding: 12px 30px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: var(--transition); border: none; font-size: 1rem; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(216, 49, 91, 0.4); }
-        .btn-whatsapp { background-color: var(--whatsapp); color: white; }
-        .btn-whatsapp:hover { background-color: #20b858; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); }
+    /* HEADER */
+    header { background: #0f4c81; color: #ffffff; padding: 2rem 1rem; text-align: center; }
+    header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 1rem auto; }
+    nav { margin-top: 1rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+    nav a { color: #ffffff; font-weight: bold; }
 
-        /* CARDS & GRID */
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: var(--transition); border-top: 4px solid var(--secondary); }
-        .card:hover { transform: translateY(-5px); }
-        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
+    /* Ícones sociais */
+    .social-icons { margin-top: 15px; display: flex; justify-content: center; gap: 15px; }
+    .social-icons a { color: #ffffff; font-size: 1.5rem; }
 
-        /* TEXT BOX (NOVO ESTILO PARA O TEXTO LONGO) */
-        .long-text-box {
-            background: white; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;
-            border-left: 5px solid var(--accent); text-align: justify;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); white-space: pre-line;
-        }
+    /* Seletor de idioma */
+    .lang-selector { margin-top: 15px; display: flex; justify-content: center; gap: 10px; }
+    .lang-selector button { background: #1f7aec; color: #fff; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; }
 
-        .form-group { margin-bottom: 1.5rem; }
-        label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
-        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; }
+    /* MAIN */
+    main { padding: 2rem 1rem; max-width: 1000px; margin: auto; }
+    section { margin-bottom: 3rem; }
+    section h2 { color: #0f4c81; margin-bottom: 1rem; font-size: 1.6rem; }
+    section p { margin-bottom: 1rem; }
 
-        /* QUIZ */
-        .quiz-container { background: white; padding: 2rem; border-radius: 10px; margin-top: 2rem; border: 2px solid var(--secondary); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; color: var(--primary); font-weight: bold; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .option-btn { display: block; width: 100%; text-align: left; background: #f8f9fa; padding: 15px; margin: 10px 0; border: 1px solid #dee2e6; cursor: pointer; border-radius: 8px; transition: var(--transition); font-size: 1rem; position: relative; }
-        .option-btn:hover:not([disabled]) { background: #e2e6ea; transform: translateX(5px); }
-        .option-btn.correct { background: #d4edda; border-color: #28a745; color: #155724; }
-        .option-btn.wrong { background: #f8d7da; border-color: #dc3545; color: #721c24; }
-        .quiz-controls { margin-top: 25px; text-align: right; }
-        .btn-next { background-color: var(--primary); }
-        .btn-restart { background-color: var(--secondary); margin-top: 15px; }
-        .quiz-results-box { text-align: center; padding: 3rem 1rem; }
-        .final-score { font-size: 3.5rem; color: var(--accent); font-weight: 800; display: block; margin: 1rem 0; }
-        .btn-mini-restart { background: none; border: none; color: var(--accent); cursor: pointer; font-size: 1.2rem; transition: transform 0.3s; margin-left: 15px; }
-        .btn-mini-restart:hover { transform: rotate(180deg); color: var(--primary); }
+    /* Botões */
+    .botao, .botao-blog { display: inline-block; padding: 12px 18px; border-radius: 6px; font-weight: bold; margin-top: 8px; color: #fff; }
+    .botao { background: #1f7aec; }
+    .botao-blog { background: #16a085; }
 
-        /* BOTÃO FLUTUANTE WPP */
-        .float-wpp {
-            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px;
-            background-color: var(--whatsapp); color: #FFF; border-radius: 50px;
-            text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999;
-            z-index: 100; display: flex; align-items: center; justify-content: center;
-            transition: all 0.3s ease; animation: pulse 2s infinite;
-        }
-        .float-wpp:hover { transform: scale(1.1); background-color: #20b858; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+    /* FOOTER */
+    footer { background: #eaeaea; text-align: center; padding: 1.5rem; font-size: 0.9rem; }
 
-        /* TICKETS & FOOTER */
-        .ticket-item { background: white; padding: 1rem; border-left: 4px solid var(--warning); margin-bottom: 10px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .status-badge { background: #e9ecef; padding: 2px 8px; border-radius: 10px; font-size: 0.8rem; float: right; }
-        
-        footer { background: var(--dark); color: white; padding: 3rem 5%; text-align: center; margin-top: 4rem; }
-        footer a { color: var(--secondary); text-decoration: underline; }
-        
-        @media (max-width: 768px) { 
-            header { flex-direction: column; gap: 15px; } 
-            nav ul { flex-wrap: wrap; justify-content: center; } 
-            .float-wpp { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
-        }
-    </style>
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      header h1 { font-size: 1.6rem; }
+      section h2 { font-size: 1.4rem; }
+    }
+  </style>
+
+  <!-- FONTS & ICONES -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <a href="https://wa.me/5571985543247?text=Olá! Vim pelo site e gostaria de saber mais sobre as aulas.Por favor, informar o valor da hora aula, pacotes mensais e os dias." class="float-wpp" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+<header>
+  <h1>Portfólio Educacional de Química - Thainara de Almeida</h1>
+  <p id="intro-text">Projetos educacionais, divulgação científica, aplicativo e blog para aprender Química de forma acessível.</p>
 
-    <header>
-        <div class="logo"><i class="fa-solid fa-atom"></i><div>QUÍMICA COM THAINARA</div></div>
-        <nav>
-            <ul>
-                <li><a onclick="router('home')" data-i18n="nav_home">Início</a></li>
-                <li><a onclick="router('subjects')" data-i18n="nav_subjects">Matérias</a></li>
-                <li><a onclick="router('olympiads')" data-i18n="nav_olympiads">Exames & Olimpíadas</a></li>
-                <li><a onclick="router('tutoring')" data-i18n="nav_tutoring">Aulas</a></li>
-                <li><a onclick="router('support')" data-i18n="nav_support">Suporte</a></li>
-                <li><a href="https://thaichem.github.io/siteteste/#/" target="_blank" class="external-link" data-i18n="nav_blog">Blog</a></li>
-            </ul>
-        </nav>
-        <div class="lang-selector">
-            <select id="langSelect" onchange="changeLanguage(this.value)">
-                <option value="pt">PT</option>
-                <option value="en">EN</option>
-                <option value="es">ES</option>
-            </select>
-        </div>
-    </header>
+  <nav>
+    <a href="#home" data-key="home">Home</a>
+    <a href="#app" data-key="app">App</a>
+    <a href="#blog" data-key="blog">Blog</a>
+    <a href="#projetos" data-key="projects">Projetos</a>
+    <a href="#sobre" data-key="about">Sobre</a>
+    <a href="#contato" data-key="contact">Contato</a>
+  </nav>
 
-    <main>
-        <section id="home" class="active">
-            <div class="hero">
-                <h1 data-i18n="hero_title">Excelência em Exatas</h1>
-                <p data-i18n="hero_subtitle">Treinamento para ENEM, OBQ, IChO e Ensino Superior.</p>
-                <button class="btn" onclick="router('tutoring')" data-i18n="btn_start">Agendar Aula</button>
-            </div>
-            <div class="grid-container">
-                <div class="card"><i class="fa-solid fa-flask"></i><h3 data-i18n="feat_chem">Química Avançada</h3></div>
-                <div class="card"><i class="fa-solid fa-calculator"></i><h3 data-i18n="feat_math">Matemática Pura</h3></div>
-                <div class="card"><i class="fa-solid fa-dna"></i><h3 data-i18n="feat_bio">Biologia Moderna</h3></div>
-                <div class="card"><i class="fa-solid fa-rocket"></i><h3 data-i18n="feat_phys">Física Aplicada</h3></div>
-            </div>
-        </section>
+  <div class="social-icons">
+    <a href="https://www.youtube.com/@quimicacomthainara1371" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/thai.chemistry/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
 
-        <section id="subjects">
-            <h2 data-i18n="subjects_title">Simulados Interativos</h2>
-            <div class="grid-container">
-                <div class="card">
-                    <h3><i class="fa-solid fa-flask"></i> Química</h3>
-                    <p data-i18n="q_bank_chem">Banco de Questões: 10 Itens</p>
-                    <button class="btn" style="margin-top:15px; width:100%;" onclick="startQuiz('chem')"><i class="fa-solid fa-play"></i> <span data-i18n="btn_quiz">Iniciar Quiz</span></button>
-                </div>
-                <div class="card">
-                    <h3><i class="fa-solid fa-bolt"></i> Física</h3>
-                    <p data-i18n="q_bank_phys">Banco de Questões: 10 Itens</p>
-                    <button class="btn" style="margin-top:15px; width:100%; background-color: var(--secondary);" onclick="startQuiz('phys')"><i class="fa-solid fa-play"></i> <span data-i18n="btn_quiz">Iniciar Quiz</span></button>
-                </div>
-            </div>
-            
-            <div id="quiz-area" class="quiz-container" style="display:none;">
-                <div id="question-box">
-                    <div class="quiz-header">
-                        <span id="quiz-subject-title">Matéria</span>
-                        <div>
-                            <span id="quiz-progress">Questão 1</span>
-                            <button class="btn-mini-restart" onclick="restartQuiz()" title="Reiniciar / Restart"><i class="fa-solid fa-rotate-right"></i></button>
-                        </div>
-                    </div>
-                    <h4 id="quiz-question" style="margin: 20px 0; font-size: 1.3rem;">Title</h4>
-                    <div id="quiz-options"></div>
-                    <div id="quiz-feedback" style="margin-top:20px; font-weight:bold; padding: 10px; border-radius: 5px;"></div>
-                    <div class="quiz-controls"><button id="btn-next-q" class="btn btn-next" style="display:none;" onclick="nextQuestion()"><span id="btn-next-text">Próxima</span> <i class="fa-solid fa-arrow-right"></i></button></div>
-                </div>
-                <div id="results-box" class="quiz-results-box" style="display:none;">
-                    <h2><i class="fa-solid fa-trophy" style="color: gold;"></i> <span data-i18n="quiz_end">Simulado Finalizado!</span></h2>
-                    <span id="final-score-display" class="final-score">0 / 0</span>
-                    <button class="btn btn-restart" onclick="restartQuiz()"><i class="fa-solid fa-rotate-right"></i> <span data-i18n="btn_restart">Tentar Novamente</span></button>
-                    <button class="btn" style="background-color: #6c757d; margin-top: 10px;" onclick="router('subjects')"><span data-i18n="btn_back">Voltar</span></button>
-                </div>
-            </div>
-        </section>
+  <div class="lang-selector">
+    <button onclick="changeLanguage('pt')">PT</button>
+    <button onclick="changeLanguage('en')">EN</button>
+    <button onclick="changeLanguage('es')">ES</button>
+    <button onclick="changeLanguage('de')">DE</button>
+    <button onclick="changeLanguage('zh')">ZH</button>
+  </div>
+</header>
 
-        <section id="olympiads">
-            <h2 data-i18n="nav_olympiads">Exames & Olimpíadas</h2>
-            
-            <div class="long-text-box">
-                <p data-i18n="olympiads_long_text">
-                    </p>
-            </div>
+<main id="home">
 
-            <div class="grid-container">
-                <div class="card" style="border-top-color: var(--success);">
-                    <h3><i class="fa-solid fa-file-contract" style="color: var(--success);"></i> ENEM</h3>
-                    <p data-i18n="enem_desc">Foco total na matriz de referência e notas máximas.</p>
-                </div>
-                <div class="card" style="border-top-color: var(--primary);">
-                    <h3><i class="fa-solid fa-graduation-cap" style="color: var(--primary);"></i> Superior</h3>
-                    <p data-i18n="uni_desc">Cálculo, Química Geral, Física, Química Analítica e Organica para universitários.</p>
-                </div>
-                <div class="card" style="border-top-color: gold;">
-                    <h3>OBQ (Brasil)</h3>
-                    <p data-i18n="obq_desc">Preparação intensiva para a OBQ.</p>
-                </div>
-                <div class="card" style="border-top-color: gold;">
-                    <h3>IChO (Inter)</h3>
-                    <p data-i18n="icho_desc">Treinamento global para IChO.</p>
-                </div>
-            </div>
-        </section>
+  <section>
+    <h2 id="sec-home-title">Ensino de Química com recursos digitais</h2>
+    <p id="sec-home-text">
+      Este portfólio reúne <strong>conteúdo educativo de Química</strong> desenvolvido
+      com foco em clareza, rigor científico e uso de tecnologia como aliada do ensino.
+    </p>
+  </section>
 
-        <section id="tutoring">
-            <h2 data-i18n="schedule_title">Agende sua Aula</h2>
-            <div class="grid-container" style="grid-template-columns: 1fr 1fr;">
-                <div>
-                    <p data-i18n="schedule_desc">Selecione a disciplina e o horário. Preencha o formulário para falar diretamente conosco.</p>
-                    <div style="margin-top: 2rem; padding: 1rem; background: #e0f2f1; border-radius: 8px; border-left: 4px solid var(--whatsapp);">
-                        <i class="fa-brands fa-whatsapp" style="color: var(--whatsapp); font-size: 1.5rem;"></i>
-                        <strong>WhatsApp:</strong>
-                        <p>Fale diretamente com Thainara Almeida.</p>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <form onsubmit="handleWhatsAppBooking(event)">
-                        <div class="form-group">
-                            <label data-i18n="form_name">Seu Nome</label>
-                            <input type="text" id="bookingName" required placeholder="Ex: Maria Silva">
-                        </div>
-                        <div class="form-group">
-                            <label data-i18n="form_subject">Matéria de Interesse</label>
-                            <select id="bookingSubject">
-                                <option value="Química">Química</option>
-                                <option value="Física">Física</option>
-                                <option value="Matemática">Matemática</option>
-                                <option value="Biologia">Biologia</option>
-                                <option value="Olimpíadas">Treino Olimpíadas</option>
-                                <option value="ENEM">Preparatório ENEM</option>
-                                <option value="Superior">Ensino Superior</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label data-i18n="form_time">Melhor Horário</label>
-                            <select id="bookingTime">
-                                <option value="Manhã">Manhã / Morning</option>
-                                <option value="Tarde">Tarde / Afternoon</option>
-                                <option value="Noite">Noite / Evening</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-whatsapp" style="width:100%">
-                            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_book">Agendar no WhatsApp</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
+  <section id="app">
+    <h2 id="sec-app-title">App Educacional de Química</h2>
+    <p id="sec-app-text">
+      O aplicativo <strong>Nomenclatura IUPAC: Química</strong> foi criado para auxiliar
+      estudantes no estudo da nomenclatura química de forma prática, objetiva e sem anúncios.
+    </p>
+    <a class="botao" href="#" target="_blank" id="sec-app-btn">Conhecer o App</a>
+  </section>
 
-        <section id="support">
-            <h2 data-i18n="support_title">Suporte</h2>
-            <div class="grid-container" style="grid-template-columns: 1fr 1fr;">
-                <div class="card">
-                    <h3 data-i18n="open_ticket">Abrir Ticket</h3>
-                    <p style="font-size:0.9rem; margin-bottom:10px;" data-i18n="ticket_sub">Dúvidas complexas ou envio de materiais.</p>
-                    <form onsubmit="createTicket(event)">
-                        <div class="form-group">
-                            <label data-i18n="ticket_msg">Mensagem</label>
-                            <textarea id="ticketMessage" rows="3" required></textarea>
-                        </div>
-                        <button type="submit" class="btn" data-i18n="btn_send">Enviar por E-mail</button>
-                    </form>
-                </div>
-                <div><h3 data-i18n="my_tickets">Histórico Recente</h3><div id="ticketList" class="ticket-list"></div></div>
-            </div>
-        </section>
-    </main>
+  <section id="blog">
+    <h2 id="sec-blog-title">Blog Educacional de Química</h2>
+    <p id="sec-blog-text">
+      O <strong>Blog Educacional de Química</strong> traz conteúdos didáticos, artigos,
+      novidades científicas e recursos digitais para estudantes e professores de Química.
+    </p>
+    <a class="botao-blog" href="https://thaichem.github.io/siteteste/#/" target="_blank" id="sec-blog-btn">Visitar Blog</a>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Química com Thainara Education.</p>
-        <p style="margin-top: 10px;">
-            <i class="fa-solid fa-envelope"></i> 
-            <a href="mailto:thainara.almeida.quimica@gmail.com">thainara.almeida.quimica@gmail.com</a>
-        </p>
-    </footer>
+  <section id="projetos">
+    <h2 id="sec-projects-title">Projetos Educacionais</h2>
+    <p id="sec-projects-text">
+      Desenvolvimento de projetos voltados ao ensino de Química, divulgação científica,
+      produção de roteiros didáticos e recursos educacionais digitais.
+    </p>
+  </section>
 
-    <script>
-        // --- 1. CONFIGURAÇÕES & TRADUÇÃO & BANCO DE QUESTÕES TRADUZIDO ---
-        let currentLang = 'pt';
-        
-        const translations = {
-            pt: { 
-                nav_home: "Início", nav_subjects: "Matérias", nav_olympiads: "Exames", nav_tutoring: "Aulas", nav_support: "Suporte", nav_blog: "Blog",
-                hero_title: "Excelência em Exatas", hero_subtitle: "Treinamento para ENEM, OBQ, IChO e Ensino Superior.", 
-                btn_start: "Agendar Aula", feat_chem: "Química Avançada", feat_math: "Matemática Pura", feat_bio: "Biologia Moderna", feat_phys: "Física Aplicada", 
-                subjects_title: "Simulados Interativos", q_bank_chem: "Banco de Questões: 10 Itens", q_bank_phys: "Banco de Questões: 10 Itens", btn_quiz: "Iniciar Quiz",
-                
-                // NOVO TEXTO LONGO
-                olympiads_long_text: `A preparação de alto rendimento é o caminho mais seguro para as melhores universidades do mundo. A **Olimpíada Brasileira de Química (OBQ)** e a **IChO (Internacional)** vão muito além de medalhas: elas abrem portas exclusivas. No Brasil, instituições de elite como a **USP, Unicamp e UNESP** possuem as "Vagas Olímpicas", permitindo o ingresso direto de medalhistas em cursos de exatas sem a necessidade do vestibular tradicional. Internacionalmente, universidades como **MIT, Harvard e Oxford** veem medalhas olímpicas como o indicador máximo de talento.\n\nParalelamente, o domínio profundo exigido pelas olimpíadas torna o **ENEM** e vestibulares de Medicina desafios muito mais acessíveis, garantindo notas máximas em Ciências da Natureza.\n\n**Como minha mentoria transforma você?** Não ensinamos apenas conteúdos; formamos atletas intelectuais. Minha metodologia foca em aprofundamento teórico de nível superior, resolução estratégica de problemas complexos e controle emocional. Identificamos suas lacunas, personalizamos o cronograma e treinamos exaustivamente até que a 'química avançada' se torne sua segunda língua. Seja para conquistar o ouro ou para garantir sua vaga em Medicina, vamos transformar seu potencial em resultados de campeão.`,
+  <section id="sobre">
+    <h2 id="sec-about-title">Sobre</h2>
+    <p id="sec-about-text">
+      Educadora em Química, com experiência em ensino, produção de conteúdo educativo
+      e desenvolvimento de projetos educacionais digitais.
+    </p>
+  </section>
 
-                obq_desc: "Preparação intensiva para a OBQ.", icho_desc: "Treinamento global para IChO.", 
-                enem_desc: "Foco total na matriz de referência e notas máximas.", uni_desc: "Cálculo, Química Geral, Física, Química Analitica e Organica para universitários.",
-                schedule_title: "Agende sua Aula", schedule_desc: "Preencha seus dados para agendamento via WhatsApp.", 
-                form_name: "Seu Nome", form_subject: "Matéria de Interesse", form_time: "Melhor Horário", btn_book: "Agendar no WhatsApp", 
-                support_title: "Suporte", open_ticket: "Novo Ticket", ticket_sub: "Dúvidas complexas ou envio de materiais.", ticket_msg: "Mensagem", btn_send: "Enviar por E-mail", my_tickets: "Meus Tickets",
-                quiz_end: "Simulado Finalizado!", btn_restart: "Tentar Novamente", btn_back: "Voltar"
-            },
-            en: { 
-                nav_home: "Home", nav_subjects: "Subjects", nav_olympiads: "Exams", nav_tutoring: "Tutoring", nav_support: "Support", nav_blog: "Blog",
-                hero_title: "Excellence in Exact Sciences", hero_subtitle: "Elite preparation for SATs, IChO, and Higher Ed.", 
-                btn_start: "Book Class", feat_chem: "Advanced Chemistry", feat_math: "Pure Math", feat_bio: "Modern Biology", feat_phys: "Applied Physics", 
-                subjects_title: "Interactive Quizzes", q_bank_chem: "Question Bank: 10 Items", q_bank_phys: "Question Bank: 10 Items", btn_quiz: "Start Quiz",
-                
-                // NOVO TEXTO LONGO (EN)
-                olympiads_long_text: `High-performance preparation is the safest path to the world's best universities. The **Brazilian Chemistry Olympiad (OBQ)** and the **International Chemistry Olympiad (IChO)** are more than just medals; they are passports. In Brazil, elite institutions like **USP and Unicamp** offer 'Olympic Seats', allowing direct admission for medalists, bypassing traditional entrance exams. Internationally, universities like **MIT, Harvard, and Oxford** view olympiad medals as the ultimate indicator of talent.\n\nFurthermore, the deep mastery required for olympiads makes standardized exams like **ENEM** (Brazil's SAT equivalent) significantly more accessible, ensuring top scores in Natural Sciences.\n\n**How does my mentorship transform you?** We don't just teach content; we train intellectual athletes. My methodology focuses on university-level theoretical depth, strategic problem-solving, and emotional control. We identify your gaps, personalize your schedule, and train exhaustively until 'advanced chemistry' becomes your second language. Whether aiming for Gold or admission to Medical School, we will turn your potential into championship results.`,
+  <section id="contato">
+    <h2 id="sec-contact-title">Contato</h2>
+    <p id="sec-contact-text">
+      Para parcerias, divulgação ou projetos educacionais:
+      <br>
+      <strong>thainara.almeida.quimica@gmail.com</strong>
+    </p>
+  </section>
 
-                obq_desc: "Intensive prep for National Olympiads.", icho_desc: "Global training for IChO.", 
-                enem_desc: "Complete preparation for the National Exam.", uni_desc: "Calculus, General Chemistry and Physics for undergrads.",
-                schedule_title: "Book Class", schedule_desc: "Fill in your details to book via WhatsApp.", 
-                form_name: "Your Name", form_subject: "Subject", form_time: "Preferred Time", btn_book: "Book via WhatsApp", 
-                support_title: "Support", open_ticket: "New Ticket", ticket_sub: "Complex questions or material submission.", ticket_msg: "Message", btn_send: "Send via Email", my_tickets: "My Tickets",
-                quiz_end: "Quiz Finished!", btn_restart: "Try Again", btn_back: "Back"
-            },
-            es: { 
-                nav_home: "Inicio", nav_subjects: "Materias", nav_olympiads: "Exámenes", nav_tutoring: "Clases", nav_support: "Soporte", nav_blog: "Blog",
-                hero_title: "Excelencia en Ciencias Exactas", hero_subtitle: "Preparación de élite para Selectividad y IChO.", 
-                btn_start: "Reservar Clase", feat_chem: "Química Avanzada", feat_math: "Matemáticas Puras", feat_bio: "Biología Moderna", feat_phys: "Física Aplicada", 
-                subjects_title: "Simulacros Interactivos", q_bank_chem: "Banco de Preguntas: 10 Items", q_bank_phys: "Banco de Preguntas: 10 Items", btn_quiz: "Iniciar Quiz",
-                
-                // NOVO TEXTO LONGO (ES)
-                olympiads_long_text: `La preparación de alto rendimiento es el camino más seguro hacia las mejores universidades del mundo. La **Olimpíada Brasileña de Química (OBQ)** y la **IChO (Internacional)** van más allá de las medallas: abren puertas exclusivas. En Brasil, instituciones de élite como la **USP y Unicamp** ofrecen 'Plazas Olímpicas', permitiendo el ingreso directo a medallistas sin el examen de ingreso tradicional. Internacionalmente, universidades como **MIT, Harvard y Oxford** ven las medallas como el indicador máximo de talento.\n\nAdemás, el dominio profundo exigido por las olimpíadas hace que el **ENEM** sea un desafío mucho más accesible, garantizando notas máximas en Ciencias.\n\n**¿Cómo te transforma mi mentoría?** No solo enseñamos contenidos; formamos atletas intelectuales. Mi metodología se enfoca en la profundidad teórica de nivel universitario, la resolución estratégica de problemas y el control emocional. Identificamos tus lagunas, personalizamos tu cronograma y entrenamos hasta que la 'química avanzada' sea tu segunda lengua. Ya sea para conquistar el oro o para ingresar a Medicina, transformaremos tu potencial en resultados de campeón.`,
+</main>
 
-                obq_desc: "Preparación intensiva.", icho_desc: "Entrenamiento global.", 
-                enem_desc: "Preparación completa para el Examen Nacional.", uni_desc: "Cálculo, Química General y Física para universitarios.",
-                schedule_title: "Agenda tu Clase", schedule_desc: "Completa tus datos para reservar por WhatsApp.", 
-                form_name: "Tu Nombre", form_subject: "Materia", form_time: "Horario Preferido", btn_book: "Reservar por WhatsApp", 
-                support_title: "Soporte", open_ticket: "Nuevo Ticket", ticket_sub: "Dudas complejas o envío de materiales.", ticket_msg: "Mensaje", btn_send: "Enviar por Email", my_tickets: "Mis Tickets",
-                quiz_end: "¡Simulacro Terminado!", btn_restart: "Intentar de Nuevo", btn_back: "Volver"
-            }
-        };
+<footer>
+  <p>© 2026 • Portfólio Educacional em Química • Thainara de Almeida</p>
+</footer>
 
-        // --- MANTER LOGICA DO QUIZ E OUTRAS FUNÇÕES IGUAIS ---
-        
-        function changeLanguage(lang) { 
-            currentLang = lang;
-            document.querySelectorAll('[data-i18n]').forEach(e => { 
-                const key = e.getAttribute('data-i18n');
-                if(translations[lang][key]) {
-                    // Se for o texto longo, usa innerHTML para processar negritos e quebras de linha
-                    if(key === 'olympiads_long_text') {
-                        e.innerHTML = translations[lang][key].replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-                    } else {
-                        e.textContent = translations[lang][key];
-                    }
-                }
-            }); 
-        }
+<script>
+  // Textos para diferentes idiomas
+  const texts = {
+    pt: {
+      intro: "Projetos educacionais, divulgação científica, aplicativo e blog para aprender Química de forma acessível.",
+      homeTitle: "Ensino de Química com recursos digitais",
+      homeText: "Este portfólio reúne conteúdo educativo de Química desenvolvido com foco em clareza, rigor científico e uso de tecnologia como aliada do ensino.",
+      appTitle: "App Educacional de Química",
+      appText: "O aplicativo Nomenclatura IUPAC: Química foi criado para auxiliar estudantes no estudo da nomenclatura química de forma prática, objetiva e sem anúncios.",
+      appBtn: "Conhecer o App",
+      blogTitle: "Blog Educacional de Química",
+      blogText: "O Blog Educacional de Química traz conteúdos didáticos, artigos, novidades científicas e recursos digitais para estudantes e professores de Química.",
+      blogBtn: "Visitar Blog",
+      projectsTitle: "Projetos Educacionais",
+      projectsText: "Desenvolvimento de projetos voltados ao ensino de Química, divulgação científica, produção de roteiros didáticos e recursos educacionais digitais.",
+      aboutTitle: "Sobre",
+      aboutText: "Educadora em Química, com experiência em ensino, produção de conteúdo educativo e desenvolvimento de projetos educacionais digitais.",
+      contactTitle: "Contato",
+      contactText: "Para parcerias, divulgação ou projetos educacionais: thainara.almeida.quimica@gmail.com"
+    },
+    en: {
+      intro: "Educational projects, scientific outreach, app and blog to learn Chemistry in an accessible way.",
+      homeTitle: "Teaching Chemistry with digital resources",
+      homeText: "This portfolio brings together Chemistry educational content developed with clarity, scientific rigor, and technology as an ally in teaching.",
+      appTitle: "Educational Chemistry App",
+      appText: "The app Nomenclature IUPAC: Chemistry was created to help students study chemical nomenclature in a practical, objective, and ad-free way.",
+      appBtn: "Explore the App",
+      blogTitle: "Educational Chemistry Blog",
+      blogText: "The Educational Chemistry Blog brings didactic content, articles, scientific news and digital resources for Chemistry students and teachers.",
+      blogBtn: "Visit Blog",
+      projectsTitle: "Educational Projects",
+      projectsText: "Development of projects focused on Chemistry teaching, scientific outreach, creation of didactic scripts and digital educational resources.",
+      aboutTitle: "About",
+      aboutText: "Chemistry educator, experienced in teaching, producing educational content, and developing digital educational projects.",
+      contactTitle: "Contact",
+      contactText: "For partnerships, outreach or educational projects: thainara.almeida.quimica@gmail.com"
+    },
+    es: {
+      intro: "Proyectos educativos, divulgación científica, aplicación y blog para aprender Química de forma accesible.",
+      homeTitle: "Enseñanza de Química con recursos digitales",
+      homeText: "Este portafolio reúne contenido educativo de Química desarrollado con claridad, rigor científico y tecnología como aliada de la enseñanza.",
+      appTitle: "Aplicación Educativa de Química",
+      appText: "La aplicación Nomenclatura IUPAC: Química fue creada para ayudar a los estudiantes a estudiar la nomenclatura química de manera práctica, objetiva y sin anuncios.",
+      appBtn: "Conocer la App",
+      blogTitle: "Blog Educativo de Química",
+      blogText: "El Blog Educativo de Química ofrece contenido didáctico, artículos, novedades científicas y recursos digitales para estudiantes y profesores de Química.",
+      blogBtn: "Visitar Blog",
+      projectsTitle: "Proyectos Educativos",
+      projectsText: "Desarrollo de proyectos enfocados en la enseñanza de Química, divulgación científica, producción de guiones didácticos y recursos educativos digitales.",
+      aboutTitle: "Acerca de",
+      aboutText: "Educadora en Química, con experiencia en enseñanza, producción de contenido educativo y desarrollo de proyectos educativos digitales.",
+      contactTitle: "Contacto",
+      contactText: "Para asociaciones, divulgación o proyectos educativos: thainara.almeida.quimica@gmail.com"
+    },
+    de: {
+      intro: "Bildungsprojekte, wissenschaftliche Aufklärung, App und Blog, um Chemie auf zugängliche Weise zu lernen.",
+      homeTitle: "Chemieunterricht mit digitalen Ressourcen",
+      homeText: "Dieses Portfolio vereint Chemie-Bildungsinhalte, entwickelt mit Klarheit, wissenschaftlicher Genauigkeit und Technologie als Unterstützung des Unterrichts.",
+      appTitle: "Bildungs-App für Chemie",
+      appText: "Die App Nomenclature IUPAC: Chemistry wurde entwickelt, um Studenten beim Lernen der chemischen Nomenklatur auf praktische, objektive und werbefreie Weise zu unterstützen.",
+      appBtn: "App entdecken",
+      blogTitle: "Bildungs-Blog für Chemie",
+      blogText: "Der Bildungs-Blog für Chemie bietet didaktische Inhalte, Artikel, wissenschaftliche Neuigkeiten und digitale Ressourcen für Chemie-Studenten und Lehrer.",
+      blogBtn: "Blog besuchen",
+      projectsTitle: "Bildungsprojekte",
+      projectsText: "Entwicklung von Projekten mit Fokus auf Chemieunterricht, wissenschaftliche Aufklärung, Erstellung didaktischer Skripte und digitale Bildungsressourcen.",
+      aboutTitle: "Über",
+      aboutText: "Chemielehrerin, erfahren in Unterricht, Erstellung von Bildungsinhalten und Entwicklung digitaler Bildungsprojekte.",
+      contactTitle: "Kontakt",
+      contactText: "Für Partnerschaften, Aufklärung oder Bildungsprojekte: thainara.almeida.quimica@gmail.com"
+    },
+    zh: {
+      intro: "教育项目，科学推广，应用程序和博客，以可访问的方式学习化学。",
+      homeTitle: "使用数字资源进行化学教学",
+      homeText: "此作品集汇集了化学教育内容，旨在以清晰、科学严谨和技术作为教学助手。",
+      appTitle: "化学教育应用程序",
+      appText: "应用程序Nomenclature IUPAC: Chemistry旨在帮助学生以实用、客观和无广告的方式学习化学命名法。",
+      appBtn: "探索应用",
+      blogTitle: "化学教育博客",
+      blogText: "化学教育博客提供教学内容、文章、科学新闻和数字资源，面向化学学生和教师。",
+      blogBtn: "访问博客",
+      projectsTitle: "教育项目",
+      projectsText: "开发以化学教学为重点的项目、科学推广、教学脚本制作及数字教育资源。",
+      aboutTitle: "关于",
+      aboutText: "化学教育者，具有教学经验、教育内容制作和数字教育项目开发经验。",
+      contactTitle: "联系",
+      contactText: "如需合作、推广或教育项目，请联系: thainara.almeida.quimica@gmail.com"
+    }
+  };
 
-        function router(pageId) { document.querySelectorAll('section').forEach(sec => sec.classList.remove('active')); document.getElementById(pageId).classList.add('active'); window.scrollTo(0,0); }
-        
-        function createTicket(e) { 
-            e.preventDefault(); 
-            const message = document.getElementById('ticketMessage').value;
-            const myEmail = "thainara.almeida.quimica@gmail.com";
-            const ticketId = 'TCK-' + Math.floor(Math.random()*9000+1000);
-            const subject = encodeURIComponent(`[SUPORTE] Novo Ticket #${ticketId} - Site`);
-            const body = encodeURIComponent(`Olá Thainara,\n\nEstou enviando este ticket pelo site:\n\nMENSAGEM:\n${message}\n\nProtocolo: ${ticketId}`);
-            window.open(`mailto:${myEmail}?subject=${subject}&body=${body}`, '_blank');
-            document.getElementById('ticketList').insertAdjacentHTML('afterbegin', `<div class="ticket-item"><span class="status-badge">Enviado</span>#${ticketId}</div>`);
-            e.target.reset();
-        }
+  function changeLanguage(lang) {
+    document.getElementById('intro-text').textContent = texts[lang].intro;
+    document.getElementById('sec-home-title').textContent = texts[lang].homeTitle;
+    document.getElementById('sec-home-text').textContent = texts[lang].homeText;
+    document.getElementById('sec-app-title').textContent = texts[lang].appTitle;
+    document.getElementById('sec-app-text').textContent = texts[lang].appText;
+    document.getElementById('sec-app-btn').textContent = texts[lang].appBtn;
+    document.getElementById('sec-blog-title').textContent = texts[lang].blogTitle;
+    document.getElementById('sec-blog-text').textContent = texts[lang].blogText;
+    document.getElementById('sec-blog-btn').textContent = texts[lang].blogBtn;
+    document.getElementById('sec-projects-title').textContent = texts[lang].projectsTitle;
+    document.getElementById('sec-projects-text').textContent = texts[lang].projectsText;
+    document.getElementById('sec-about-title').textContent = texts[lang].aboutTitle;
+    document.getElementById('sec-about-text').textContent = texts[lang].aboutText;
+    document.getElementById('sec-contact-title').textContent = texts[lang].contactTitle;
+    document.getElementById('sec-contact-text').innerHTML = texts[lang].contactText.replace(/\n/g,'<br>');
+  }
+</script>
 
-        function handleWhatsAppBooking(e) {
-            e.preventDefault();
-            const name = document.getElementById('bookingName').value;
-            const subject = document.getElementById('bookingSubject').value;
-            const time = document.getElementById('bookingTime').value;
-            const myNumber = "5571985543247"; 
-            const text = `Olá Thainara! Meu nome é *${name}*.\nGostaria de agendar uma aula de *${subject}*.\nPreferência de horário: *${time}*.`;
-            window.open(`https://wa.me/${myNumber}?text=${encodeURIComponent(text)}`, '_blank');
-        }
-
-        const fullQuizDatabase = {
-            pt: {
-                chem: [{q:"Nox do Cromo no K2Cr2O7?",o:["+3","+5","+6","+7"],c:2}, {q:"pH neutro a 25°C?",o:["0","7","14","10"],c:1}, {q:"Orbital 'd' tem l=?",o:["0","1","2","3"],c:2}, {q:"Ligação com partilha de elétrons:",o:["Iônica","Covalente","Metálica","H"],c:1}, {q:"Geometria H2O:",o:["Linear","Angular","Trigonal","Tetra"],c:1}, {q:"Mais eletronegativo:",o:["O","Cl","F","N"],c:2}, {q:"Pressão total = soma parciais (Lei de):",o:["Boyle","Charles","Dalton","Avogadro"],c:2}, {q:"Ácido forte:",o:["CH3COOH","HF","HCl","HCN"],c:2}, {q:"Partícula negativa:",o:["Próton","Nêutron","Elétron","Pósitron"],c:2}, {q:"Refino petróleo:",o:["Filtração","Decantação","Destilação","Levigação"],c:2}],
-                phys: [{q:"Unidade Força SI:",o:["J","W","Pa","N"],c:3}, {q:"Ec = 1/2mv^2, v é:",o:["Volume","Voltagem","Velocidade","Visco"],c:2}, {q:"1ª Lei Newton:",o:["Inércia","Ação/Reação","Gravitação","Dinâmica"],c:0}, {q:"Gravidade Terra:",o:["5","9,8","12","15"],c:1}, {q:"Grandeza vetorial:",o:["Tempo","Massa","Temp","Deslocamento"],c:3}, {q:"Luz muda meio (fenômeno):",o:["Reflexão","Refração","Difração","Polar"],c:1}, {q:"V=R.i Lei de:",o:["Ohm","Coulomb","Joule","Faraday"],c:0}, {q:"Unidade Carga:",o:["A","V","C","Ohm"],c:2}, {q:"Energia altura:",o:["Cinética","Potencial","Térmica","Elástica"],c:1}, {q:"Mede pressão atm:",o:["Termômetro","Barômetro","Manômetro","Higro"],c:1}]
-            },
-            en: {
-                chem: [{q:"Oxidation state of Cr in K2Cr2O7?",o:["+3","+5","+6","+7"],c:2}, {q:"Neutral pH at 25°C?",o:["0","7","14","10"],c:1}, {q:"Azimuthal quantum number (l) for 'd'?",o:["0","1","2","3"],c:2}, {q:"Bond type sharing electrons:",o:["Ionic","Covalent","Metallic","Hydrogen"],c:1}, {q:"H2O Geometry:",o:["Linear","Bent","Trigonal","Tetrahedral"],c:1}, {q:"Most electronegative element:",o:["O","Cl","F","N"],c:2}, {q:"Total pressure = sum of partials (Law of):",o:["Boyle","Charles","Dalton","Avogadro"],c:2}, {q:"Strong acid:",o:["CH3COOH","HF","HCl","HCN"],c:2}, {q:"Negative subatomic particle:",o:["Proton","Neutron","Electron","Positron"],c:2}, {q:"Petroleum refining process:",o:["Filtration","Decantation","Distillation","Levigation"],c:2}],
-                phys: [{q:"SI Unit of Force:",o:["J","W","Pa","N"],c:3}, {q:"In Ec = 1/2mv^2, 'v' is:",o:["Volume","Voltage","Velocity","Viscosity"],c:2}, {q:"Newton's 1st Law:",o:["Inertia","Action/Reaction","Gravitation","Dynamics"],c:0}, {q:"Earth Gravity (approx):",o:["5","9.8","12","15"],c:1}, {q:"Vector quantity:",o:["Time","Mass","Temp","Displacement"],c:3}, {q:"Light changing medium (phenomenon):",o:["Reflection","Refraction","Diffraction","Polarization"],c:1}, {q:"V=R.i is Law of:",o:["Ohm","Coulomb","Joule","Faraday"],c:0}, {q:"Unit of Charge:",o:["A","V","C","Ohm"],c:2}, {q:"Energy due to height:",o:["Kinetic","Potential","Thermal","Elastic"],c:1}, {q:"Measures atm pressure:",o:["Thermometer","Barometer","Manometer","Hygrometer"],c:1}]
-            },
-            es: {
-                chem: [{q:"¿Nox del Cromo en K2Cr2O7?",o:["+3","+5","+6","+7"],c:2}, {q:"¿pH neutro a 25°C?",o:["0","7","14","10"],c:1}, {q:"¿Número cuántico (l) para 'd'?",o:["0","1","2","3"],c:2}, {q:"Enlace que comparte electrones:",o:["Iónico","Covalente","Metálico","Hidrógeno"],c:1}, {q:"Geometría H2O:",o:["Lineal","Angular","Trigonal","Tetraédrica"],c:1}, {q:"Elemento más electronegativo:",o:["O","Cl","F","N"],c:2}, {q:"Presión total = suma parciales (Ley de):",o:["Boyle","Charles","Dalton","Avogadro"],c:2}, {q:"Ácido fuerte:",o:["CH3COOH","HF","HCl","HCN"],c:2}, {q:"Partícula negativa:",o:["Protón","Neutrón","Electrón","Positrón"],c:2}, {q:"Refinación del petróleo:",o:["Filtración","Decantación","Destilación","Levigación"],c:2}],
-                phys: [{q:"Unidad de Fuerza SI:",o:["J","W","Pa","N"],c:3}, {q:"En Ec = 1/2mv^2, 'v' es:",o:["Volumen","Voltaje","Velocidad","Viscosidad"],c:2}, {q:"1ª Ley de Newton:",o:["Inercia","Acción/Reacción","Gravitación","Dinámica"],c:0}, {q:"Gravedad Tierra:",o:["5","9,8","12","15"],c:1}, {q:"Magnitud vectorial:",o:["Tiempo","Masa","Temp","Desplazamiento"],c:3}, {q:"Luz cambia medio (fenómeno):",o:["Reflexión","Refracción","Difracción","Polarización"],c:1}, {q:"V=R.i es Ley de:",o:["Ohm","Coulomb","Joule","Faraday"],c:0}, {q:"Unidad de Carga:",o:["A","V","C","Ohm"],c:2}, {q:"Energía por altura:",o:["Cinética","Potencial","Térmica","Elástica"],c:1}, {q:"Mide presión atm:",o:["Termómetro","Barómetro","Manómetro","Higrómetro"],c:1}]
-            }
-        };
-
-        function shuffleArray(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
-        
-        function startQuiz(s){
-            currentSubject=s; score=0; currentQIndex=0;
-            const questions = fullQuizDatabase[currentLang][s];
-            currentQuizData = shuffleArray([...questions]);
-            document.getElementById('quiz-area').style.display='block';
-            document.getElementById('question-box').style.display='block';
-            document.getElementById('results-box').style.display='none';
-            const titles = { chem: {pt:"Química", en:"Chemistry", es:"Química"}, phys: {pt:"Física", en:"Physics", es:"Física"} };
-            document.getElementById('quiz-subject-title').innerText = titles[s][currentLang];
-            document.getElementById('quiz-area').scrollIntoView({behavior:'smooth'});
-            loadQuestion();
-        }
-
-        function loadQuestion(){
-            const q=currentQuizData[currentQIndex];
-            const progText = { pt: "Questão", en: "Question", es: "Pregunta" };
-            document.getElementById('quiz-progress').innerText=`${progText[currentLang]} ${currentQIndex+1}/10`;
-            document.getElementById('quiz-question').innerText=q.q;
-            document.getElementById('quiz-feedback').innerText='';
-            document.getElementById('btn-next-q').style.display='none';
-            const d=document.getElementById('quiz-options');
-            d.innerHTML='';
-            q.o.forEach((opt,i)=>{
-                const b=document.createElement('button');
-                b.className='option-btn';
-                b.innerText=opt;
-                b.onclick=()=>check(b,i);
-                d.appendChild(b);
-            });
-        }
-
-        function check(b,i){
-            const c=currentQuizData[currentQIndex].c;
-            document.querySelectorAll('.option-btn').forEach(btn=>btn.disabled=true);
-            const f=document.getElementById('quiz-feedback');
-            const msg = {
-                correct: { pt: "Correto!", en: "Correct!", es: "¡Correcto!" },
-                wrong: { pt: "Errado. Correta:", en: "Wrong. Correct:", es: "Incorrecto. Correcta:" },
-                next: { pt: "Próxima", en: "Next", es: "Siguiente" },
-                result: { pt: "Ver Resultado", en: "See Results", es: "Ver Resultados" }
-            };
-
-            if(i===c){
-                b.classList.add('correct'); f.innerText = msg.correct[currentLang]; f.style.color="#155724"; f.style.background="#d4edda"; score++;
-            }else{
-                b.classList.add('wrong'); document.querySelectorAll('.option-btn')[c].classList.add('correct'); f.innerText = `${msg.wrong[currentLang]} ${currentQuizData[currentQIndex].o[c]}`; f.style.color="#721c24"; f.style.background="#f8d7da";
-            }
-            const n=document.getElementById('btn-next-q');
-            const nText = document.getElementById('btn-next-text');
-            n.style.display='inline-block';
-            if(currentQIndex===9) nText.innerText = msg.result[currentLang]; else nText.innerText = msg.next[currentLang];
-        }
-
-        function nextQuestion(){ currentQIndex++; if(currentQIndex<10) loadQuestion(); else showResults(); }
-        function showResults(){ document.getElementById('question-box').style.display='none'; document.getElementById('results-box').style.display='block'; document.getElementById('final-score-display').innerText=`${score} / 10`; }
-        function restartQuiz(){startQuiz(currentSubject);}
-        
-        window.onload = () => changeLanguage('pt');
-    </script>
 </body>
-</html> 
+</html>
+
