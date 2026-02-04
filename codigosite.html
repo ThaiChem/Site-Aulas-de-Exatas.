@@ -1,280 +1,254 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-Language" content="pt-BR">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Química com Thainara — Educação Digital, Apps e Consultoria</title>
 
-  <title>Portfólio Educacional de Química | Thainara Guedes de Almeida</title>
-  <meta name="description" content="Portfólio educativo de Química: aplicativo, blog, projetos didáticos e divulgação científica por Thainara de Almeida.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://thaichem.github.io/Site-Aulas-de-Exatas./codigosite.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
 
-  <!-- Schema Educacional -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Portfólio Educacional em Química - Thainara Guedes de Almeida",
-    "description": "Produção de conteúdo educativo, projetos educacionais, aplicativo e blog de Química.",
-    "areaServed": "BR",
-    "educationalLevel": ["Ensino Médio", "Graduação"],
-    "teaches": "Química",
-    "author": {
-      "@type": "Person",
-      "name": "Thainara Guedes de Almeida",
-      "jobTitle": "Educadora em Química"
-    },
-    "sameAs": [
-      "https://www.youtube.com/@quimicacomthainara1371",
-      "https://www.instagram.com/thai.chemistry/"
-    ]
-  }
-  </script>
+<!-- SEO internacional -->
+<meta name="description" id="meta-desc" content="Educação em Química com recursos digitais, apps educacionais e consultoria para exames nacionais e internacionais.">
 
-  <!-- ===== ESTILOS ===== -->
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: #1f2933; background: #ffffff; }
-    a { text-decoration: none; }
+<link rel="canonical" href="https://thaichem.github.io/">
 
-    /* HEADER */
-    header { background: #0f4c81; color: #ffffff; padding: 2rem 1rem; text-align: center; }
-    header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-    header p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 1rem auto; }
-    nav { margin-top: 1rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
-    nav a { color: #ffffff; font-weight: bold; }
+<link rel="alternate" hreflang="pt-BR" href="https://thaichem.github.io/">
+<link rel="alternate" hreflang="en-US" href="https://thaichem.github.io/">
+<link rel="alternate" hreflang="es-ES" href="https://thaichem.github.io/">
+<link rel="alternate" hreflang="de-DE" href="https://thaichem.github.io/">
+<link rel="alternate" hreflang="zh-CN" href="https://thaichem.github.io/">
+<link rel="alternate" hreflang="x-default" href="https://thaichem.github.io/">
 
-    /* Ícones sociais */
-    .social-icons { margin-top: 15px; display: flex; justify-content: center; gap: 15px; }
-    .social-icons a { color: #ffffff; font-size: 1.5rem; }
+<!-- Schema educacional global -->
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Person",
+ "name":"Thainara Guedes de Almeida",
+ "jobTitle":"Chemistry Teacher and Educational App Developer",
+ "areaServed":["BR","US","ES","DE","CN"],
+ "knowsAbout":[
+  "Chemistry Education",
+  "STEM Education",
+  "Educational Technology",
+  "Exam Preparation",
+  "IUPAC Nomenclature"
+ ],
+ "sameAs":[
+  "https://www.youtube.com/@quimicacomthainara1371",
+  "https://play.google.com/store/apps/dev?id=4811959724366045604"
+ ]
+}
+</script>
 
-    /* Seletor de idioma */
-    .lang-selector { margin-top: 15px; display: flex; justify-content: center; gap: 10px; }
-    .lang-selector button { background: #1f7aec; color: #fff; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;color:#1f2933}
+header{background:#0f4c81;color:white;padding:2rem;text-align:center}
+h1{font-size:2rem;margin-bottom:10px}
+nav{margin-top:15px;display:flex;flex-wrap:wrap;gap:15px;justify-content:center}
+nav a{color:white;text-decoration:none;font-weight:bold}
 
-    /* MAIN */
-    main { padding: 2rem 1rem; max-width: 1000px; margin: auto; }
-    section { margin-bottom: 3rem; }
-    section h2 { color: #0f4c81; margin-bottom: 1rem; font-size: 1.6rem; }
-    section p { margin-bottom: 1rem; }
+.icons{margin-top:15px;font-size:26px}
+.icons a{text-decoration:none;margin:0 12px}
+.yt{color:#ff0000;font-weight:bold}
+.play{color:#1db954;font-weight:bold}
 
-    /* Botões */
-    .botao, .botao-blog { display: inline-block; padding: 12px 18px; border-radius: 6px; font-weight: bold; margin-top: 8px; color: #fff; }
-    .botao { background: #1f7aec; }
-    .botao-blog { background: #16a085; }
+.lang{margin-top:15px}
+.lang button{margin:3px;padding:6px 10px;border:none;border-radius:5px;cursor:pointer}
 
-    /* FOOTER */
-    footer { background: #eaeaea; text-align: center; padding: 1.5rem; font-size: 0.9rem; }
+main{max-width:1000px;margin:auto;padding:2rem 1rem}
+section{margin-bottom:2.5rem}
+h2{color:#0f4c81;margin-bottom:10px}
 
-    /* RESPONSIVO */
-    @media (max-width: 768px) {
-      header h1 { font-size: 1.6rem; }
-      section h2 { font-size: 1.4rem; }
-    }
-  </style>
+.botao{
+display:inline-block;
+background:#1f7aec;
+color:white;
+padding:12px 18px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+margin:6px 6px 0 0;
+}
 
-  <!-- FONTS & ICONES -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+footer{background:#eaeaea;text-align:center;padding:1.5rem;margin-top:40px}
+
+@media(max-width:768px){
+h1{font-size:1.5rem}
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>Portfólio Educacional de Química - Thainara Guedes de Almeida</h1>
-  <p id="intro-text">Projetos educacionais, divulgação científica, aplicativo e blog para aprender Química de forma acessível.</p>
 
-  <nav>
-    <a href="#home" data-key="home">Home</a>
-    <a href="#app" data-key="app">App</a>
-    <a href="#blog" data-key="blog">Blog</a>
-    <a href="#projetos" data-key="projects">Projetos</a>
-    <a href="#sobre" data-key="about">Sobre</a>
-    <a href="#contato" data-key="contact">Contato</a>
-  </nav>
+<h1 id="title">Química com Thainara</h1>
+<p id="subtitle">Educação digital, apps e consultoria em Química e Exatas</p>
 
-  <div class="social-icons">
-    <a href="https://www.youtube.com/@quimicacomthainara1371" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.instagram.com/thai.chemistry/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-  </div>
+<div class="icons">
+<a class="yt" href="https://www.youtube.com/@quimicacomthainara1371" target="_blank">▶ YouTube</a>
+<a class="play" href="https://play.google.com/store/apps/dev?id=4811959724366045604" target="_blank">◆ Google Play</a>
+</div>
 
-  <div class="lang-selector">
-    <button onclick="changeLanguage('pt')">PT</button>
-    <button onclick="changeLanguage('en')">EN</button>
-    <button onclick="changeLanguage('es')">ES</button>
-    <button onclick="changeLanguage('de')">DE</button>
-    <button onclick="changeLanguage('zh')">ZH</button>
-  </div>
+<div class="lang">
+<button onclick="setLang('pt')">PT</button>
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('es')">ES</button>
+<button onclick="setLang('de')">DE</button>
+<button onclick="setLang('zh')">ZH</button>
+</div>
+
+<nav>
+<a href="#recursos" id="nav1"></a>
+<a href="#apps" id="nav2"></a>
+<a href="#blog" id="nav3"></a>
+<a href="#sobre" id="nav4"></a>
+<a href="#contato" id="nav5"></a>
+</nav>
+
 </header>
 
-<main id="home">
+<main>
 
-  <section>
-    <h2 id="sec-home-title">Ensino de Química com recursos digitais</h2>
-    <p id="sec-home-text">
-      Este portfólio reúne <strong>conteúdo educativo de Química</strong> desenvolvido
-      com foco em clareza, rigor científico e uso de tecnologia como aliada do ensino.
-    </p>
-  </section>
+<section id="recursos">
+<h2 id="sec1"></h2>
+<p id="txt1"></p>
+</section>
 
-  <section id="app">
-    <h2 id="sec-app-title">App Educacional de Química</h2>
-    <p id="sec-app-text">
-      O aplicativo <strong>Nomenclatura IUPAC: Química</strong> foi criado para auxiliar
-      estudantes no estudo da nomenclatura química de forma prática, objetiva e sem anúncios.
-    </p>
-    <a class="botao" href="https://play.google.com/apps/testing/com.iupacguide.app" target="_blank" id="sec-app-btn">
-  Conhecer o App
+<section id="apps">
+<h2 id="sec2"></h2>
+<p id="txt2"></p>
+
+<a class="botao" href="https://play.google.com/apps/testing/com.iupacguide.app" target="_blank">
+Nomenclatura IUPAC: Química
 </a>
 
-  </section>
+<a class="botao" href="https://play.google.com/store/apps/details?id=quimicalcrendimento.app" target="_blank">
+Química Combustão e Rendimento
+</a>
+</section>
 
-  <section id="blog">
-    <h2 id="sec-blog-title">Blog Educacional de Química</h2>
-    <p id="sec-blog-text">
-      O <strong>Blog Educacional de Química</strong> traz conteúdos didáticos, artigos,
-      novidades científicas e recursos digitais para estudantes e professores de Química.
-    </p>
-    <a class="botao-blog" href="https://thaichem.github.io/siteteste/#/" target="_blank" id="sec-blog-btn">Visitar Blog</a>
-  </section>
+<section id="blog">
+<h2 id="sec3"></h2>
+<p id="txt3"></p>
+<a class="botao" href="https://thaichem.github.io/siteteste/#/" target="_blank">Abrir Blog</a>
+</section>
 
-  <section id="projetos">
-    <h2 id="sec-projects-title">Projetos Educacionais</h2>
-    <p id="sec-projects-text">
-      Desenvolvimento de projetos voltados ao ensino de Química, divulgação científica,
-      produção de roteiros didáticos e recursos educacionais digitais.
-    </p>
-  </section>
+<section id="sobre">
+<h2 id="sec4"></h2>
+<p id="txt4"></p>
+</section>
 
-  <section id="sobre">
-    <h2 id="sec-about-title">Sobre</h2>
-    <p id="sec-about-text">
-      Educadora em Química, com experiência em ensino, produção de conteúdo educativo
-      e desenvolvimento de projetos educacionais digitais.
-    </p>
-  </section>
+<section id="contato">
+<h2 id="sec5"></h2>
+<p id="txt5"></p>
 
-  <section id="contato">
-    <h2 id="sec-contact-title">Contato</h2>
-    <p id="sec-contact-text">
-      Para parcerias, divulgação ou projetos educacionais:
-      <br>
-      <strong>thainara.almeida.quimica@gmail.com</strong>
-    </p>
-  </section>
+<a class="botao" href="mailto:thainara.almeida.quimica@gmail.com">Email</a>
+<a class="botao" href="https://wa.me/5571985543247" target="_blank">WhatsApp</a>
+</section>
 
 </main>
 
 <footer>
-  <p>© 2026 • Portfólio Educacional em Química • Thainara Guedes de Almeida</p>
+<p>© 2026 — Thainara Guedes de Almeida</p>
 </footer>
 
 <script>
-  // Textos para diferentes idiomas
-  const texts = {
-    pt: {
-      intro: "Projetos educacionais, divulgação científica, aplicativo e blog para aprender Química de forma acessível.",
-      homeTitle: "Ensino de Química com recursos digitais",
-      homeText: "Este portfólio reúne conteúdo educativo de Química desenvolvido com foco em clareza, rigor científico e uso de tecnologia como aliada do ensino.",
-      appTitle: "App Educacional de Química",
-      appText: "O aplicativo Nomenclatura IUPAC: Química foi criado para auxiliar estudantes no estudo da nomenclatura química de forma prática, objetiva e sem anúncios.",
-      appBtn: "Conhecer o App",
-      blogTitle: "Blog Educacional de Química",
-      blogText: "O Blog Educacional de Química traz conteúdos didáticos, artigos, novidades científicas e recursos digitais para estudantes e professores de Química.",
-      blogBtn: "Visitar Blog",
-      projectsTitle: "Projetos Educacionais",
-      projectsText: "Desenvolvimento de projetos voltados ao ensino de Química, divulgação científica, produção de roteiros didáticos e recursos educacionais digitais.",
-      aboutTitle: "Sobre",
-      aboutText: "Educadora em Química, com experiência em ensino, produção de conteúdo educativo e desenvolvimento de projetos educacionais digitais.",
-      contactTitle: "Contato",
-      contactText: "Para parcerias, divulgação ou projetos educacionais: thainara.almeida.quimica@gmail.com"
-    },
-    en: {
-      intro: "Educational projects, scientific outreach, app and blog to learn Chemistry in an accessible way.",
-      homeTitle: "Teaching Chemistry with digital resources",
-      homeText: "This portfolio brings together Chemistry educational content developed with clarity, scientific rigor, and technology as an ally in teaching.",
-      appTitle: "Educational Chemistry App",
-      appText: "The app Nomenclature IUPAC: Chemistry was created to help students study chemical nomenclature in a practical, objective, and ad-free way.",
-      appBtn: "Explore the App",
-      blogTitle: "Educational Chemistry Blog",
-      blogText: "The Educational Chemistry Blog brings didactic content, articles, scientific news and digital resources for Chemistry students and teachers.",
-      blogBtn: "Visit Blog",
-      projectsTitle: "Educational Projects",
-      projectsText: "Development of projects focused on Chemistry teaching, scientific outreach, creation of didactic scripts and digital educational resources.",
-      aboutTitle: "About",
-      aboutText: "Chemistry educator, experienced in teaching, producing educational content, and developing digital educational projects.",
-      contactTitle: "Contact",
-      contactText: "For partnerships, outreach or educational projects: thainara.almeida.quimica@gmail.com"
-    },
-    es: {
-      intro: "Proyectos educativos, divulgación científica, aplicación y blog para aprender Química de forma accesible.",
-      homeTitle: "Enseñanza de Química con recursos digitales",
-      homeText: "Este portafolio reúne contenido educativo de Química desarrollado con claridad, rigor científico y tecnología como aliada de la enseñanza.",
-      appTitle: "Aplicación Educativa de Química",
-      appText: "La aplicación Nomenclatura IUPAC: Química fue creada para ayudar a los estudiantes a estudiar la nomenclatura química de manera práctica, objetiva y sin anuncios.",
-      appBtn: "Conocer la App",
-      blogTitle: "Blog Educativo de Química",
-      blogText: "El Blog Educativo de Química ofrece contenido didáctico, artículos, novedades científicas y recursos digitales para estudiantes y profesores de Química.",
-      blogBtn: "Visitar Blog",
-      projectsTitle: "Proyectos Educativos",
-      projectsText: "Desarrollo de proyectos enfocados en la enseñanza de Química, divulgación científica, producción de guiones didácticos y recursos educativos digitales.",
-      aboutTitle: "Acerca de",
-      aboutText: "Educadora en Química, con experiencia en enseñanza, producción de contenido educativo y desarrollo de proyectos educativos digitales.",
-      contactTitle: "Contacto",
-      contactText: "Para asociaciones, divulgación o proyectos educativos: thainara.almeida.quimica@gmail.com"
-    },
-    de: {
-      intro: "Bildungsprojekte, wissenschaftliche Aufklärung, App und Blog, um Chemie auf zugängliche Weise zu lernen.",
-      homeTitle: "Chemieunterricht mit digitalen Ressourcen",
-      homeText: "Dieses Portfolio vereint Chemie-Bildungsinhalte, entwickelt mit Klarheit, wissenschaftlicher Genauigkeit und Technologie als Unterstützung des Unterrichts.",
-      appTitle: "Bildungs-App für Chemie",
-      appText: "Die App Nomenclature IUPAC: Chemistry wurde entwickelt, um Studenten beim Lernen der chemischen Nomenklatur auf praktische, objektive und werbefreie Weise zu unterstützen.",
-      appBtn: "App entdecken",
-      blogTitle: "Bildungs-Blog für Chemie",
-      blogText: "Der Bildungs-Blog für Chemie bietet didaktische Inhalte, Artikel, wissenschaftliche Neuigkeiten und digitale Ressourcen für Chemie-Studenten und Lehrer.",
-      blogBtn: "Blog besuchen",
-      projectsTitle: "Bildungsprojekte",
-      projectsText: "Entwicklung von Projekten mit Fokus auf Chemieunterricht, wissenschaftliche Aufklärung, Erstellung didaktischer Skripte und digitale Bildungsressourcen.",
-      aboutTitle: "Über",
-      aboutText: "Chemielehrerin, erfahren in Unterricht, Erstellung von Bildungsinhalten und Entwicklung digitaler Bildungsprojekte.",
-      contactTitle: "Kontakt",
-      contactText: "Für Partnerschaften, Aufklärung oder Bildungsprojekte: thainara.almeida.quimica@gmail.com"
-    },
-    zh: {
-      intro: "教育项目，科学推广，应用程序和博客，以可访问的方式学习化学。",
-      homeTitle: "使用数字资源进行化学教学",
-      homeText: "此作品集汇集了化学教育内容，旨在以清晰、科学严谨和技术作为教学助手。",
-      appTitle: "化学教育应用程序",
-      appText: "应用程序Nomenclature IUPAC: Chemistry旨在帮助学生以实用、客观和无广告的方式学习化学命名法。",
-      appBtn: "探索应用",
-      blogTitle: "化学教育博客",
-      blogText: "化学教育博客提供教学内容、文章、科学新闻和数字资源，面向化学学生和教师。",
-      blogBtn: "访问博客",
-      projectsTitle: "教育项目",
-      projectsText: "开发以化学教学为重点的项目、科学推广、教学脚本制作及数字教育资源。",
-      aboutTitle: "关于",
-      aboutText: "化学教育者，具有教学经验、教育内容制作和数字教育项目开发经验。",
-      contactTitle: "联系",
-      contactText: "如需合作、推广或教育项目，请联系: thainara.almeida.quimica@gmail.com"
-    }
-  };
 
-  function changeLanguage(lang) {
-    document.getElementById('intro-text').textContent = texts[lang].intro;
-    document.getElementById('sec-home-title').textContent = texts[lang].homeTitle;
-    document.getElementById('sec-home-text').textContent = texts[lang].homeText;
-    document.getElementById('sec-app-title').textContent = texts[lang].appTitle;
-    document.getElementById('sec-app-text').textContent = texts[lang].appText;
-    document.getElementById('sec-app-btn').textContent = texts[lang].appBtn;
-    document.getElementById('sec-blog-title').textContent = texts[lang].blogTitle;
-    document.getElementById('sec-blog-text').textContent = texts[lang].blogText;
-    document.getElementById('sec-blog-btn').textContent = texts[lang].blogBtn;
-    document.getElementById('sec-projects-title').textContent = texts[lang].projectsTitle;
-    document.getElementById('sec-projects-text').textContent = texts[lang].projectsText;
-    document.getElementById('sec-about-title').textContent = texts[lang].aboutTitle;
-    document.getElementById('sec-about-text').textContent = texts[lang].aboutText;
-    document.getElementById('sec-contact-title').textContent = texts[lang].contactTitle;
-    document.getElementById('sec-contact-text').innerHTML = texts[lang].contactText.replace(/\n/g,'<br>');
-  }
+const T = {
+
+pt:{
+meta:"Educação em Química com recursos digitais, apps educacionais e consultoria para exames nacionais e internacionais.",
+nav:["Recursos Digitais","Apps Educacionais","Blog","Sobre","Contato"],
+s1:"Ensino de Química com recursos digitais",
+t1:"Desenvolvimento de conteúdos didáticos digitais, roteiros de estudo, materiais interativos e vídeos educativos para facilitar o aprendizado de Química em níveis médio e superior.",
+s2:"Apps Educacionais",
+t2:"Aplicativos educacionais de Química focados em nomenclatura, cálculos e rendimento de reações, projetados para estudo rápido, prática e preparação para provas.",
+s3:"Blog Educacional",
+t3:"Artigos explicativos, guias de estudo e conteúdos de apoio para estudantes de Química e Exatas.",
+s4:"Sobre",
+t4:"Professora de Química formada, criadora de conteúdo educacional e desenvolvedora de aplicativos didáticos. Atua com educação digital, projetos de ensino e consultoria para Química e Exatas em nível médio e superior, exames nacionais, internacionais e concursos.",
+s5:"Contato",
+t5:"Parcerias educacionais, projetos, produção de conteúdo e consultoria acadêmica."
+},
+
+en:{
+meta:"Chemistry education with digital resources, educational apps and exam consulting.",
+nav:["Digital Resources","Educational Apps","Blog","About","Contact"],
+s1:"Chemistry learning with digital resources",
+t1:"Development of digital learning materials, interactive content and educational videos for high school and university chemistry.",
+s2:"Educational Apps",
+t2:"Chemistry apps focused on nomenclature and reaction calculations for exam preparation.",
+s3:"Educational Blog",
+t3:"Study guides and chemistry learning articles.",
+s4:"About",
+t4:"Certified chemistry teacher, educational content creator and app developer focused on digital STEM education and exam preparation.",
+s5:"Contact",
+t5:"Educational partnerships, consulting and academic projects."
+},
+
+es:{
+meta:"Educación química con recursos digitales y aplicaciones educativas.",
+nav:["Recursos Digitales","Apps","Blog","Sobre","Contacto"],
+s1:"Aprendizaje de química con recursos digitales",
+t1:"Materiales digitales e interactivos para química escolar y universitaria.",
+s2:"Aplicaciones Educativas",
+t2:"Apps de química para nomenclatura y cálculos.",
+s3:"Blog Educativo",
+t3:"Guías y artículos de estudio.",
+s4:"Sobre",
+t4:"Profesora de química y desarrolladora de recursos educativos digitales.",
+s5:"Contacto",
+t5:"Proyectos educativos y consultoría."
+},
+
+de:{
+meta:"Digitale Chemiebildung und Lern-Apps.",
+nav:["Digitale Ressourcen","Apps","Blog","Über","Kontakt"],
+s1:"Chemie lernen digital",
+t1:"Digitale Lernmaterialien und Videos für Chemie.",
+s2:"Lern-Apps",
+t2:"Chemie-Apps für Prüfungsvorbereitung.",
+s3:"Blog",
+t3:"Chemie Lernartikel.",
+s4:"Über",
+t4:"Chemielehrerin und Entwickler von Lernressourcen.",
+s5:"Kontakt",
+t5:"Beratung und Bildungsprojekte."
+},
+
+zh:{
+meta:"化学数字教育与学习应用。",
+nav:["数字资源","应用","博客","关于","联系"],
+s1:"数字化学学习",
+t1:"互动化学学习资源。",
+s2:"教育应用",
+t2:"化学学习应用程序。",
+s3:"教育博客",
+t3:"学习指南与文章。",
+s4:"关于",
+t4:"化学教师与教育应用开发者。",
+s5:"联系",
+t5:"教育合作与咨询。"
+}
+
+};
+
+function setLang(l){
+const d=T[l];
+document.getElementById("meta-desc").setAttribute("content",d.meta);
+["nav1","nav2","nav3","nav4","nav5"].forEach((id,i)=>document.getElementById(id).innerText=d.nav[i]);
+sec1.innerText=d.s1; txt1.innerText=d.t1;
+sec2.innerText=d.s2; txt2.innerText=d.t2;
+sec3.innerText=d.s3; txt3.innerText=d.t3;
+sec4.innerText=d.s4; txt4.innerText=d.t4;
+sec5.innerText=d.s5; txt5.innerText=d.t5;
+}
+
+setLang('pt');
+
 </script>
 
 </body>
